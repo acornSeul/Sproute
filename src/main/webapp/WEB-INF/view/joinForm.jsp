@@ -26,7 +26,7 @@ div {text-align:center;}
           <br>
          
       <label for="cPassword">비밀번호 :  </label>
-         <form:password path="cPassword"/><br/>
+         <form:password path="cPassword"/> <br/>
          <form:errors path="cPassword"/>
           <br>
          
