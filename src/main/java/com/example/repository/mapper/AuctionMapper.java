@@ -8,7 +8,7 @@ import com.example.sproute.domain.Bidding;
 public interface AuctionMapper {
 	
 	Integer insertAuctionItem(Auction auction);
-	//경매
+	//경매.
 	Auction selectAuction(String itemId);
 	Auction updateAuction(Auction auction);
 	Integer deleteAuction(String itemId);
