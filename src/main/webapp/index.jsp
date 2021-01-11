@@ -5,25 +5,25 @@
 <html>
 <head>
 <style>
-a { color:black; text-decoration:none; }
-table#index {
-	background-color: #FFFF88;
-	border: none;
-	width: 170px;
-	border-collapse: collapse;            
-}
-table#index tr td {
-    padding: 5px; 
-}
-table.top {
-    background-image: url('images/bkg-topbar.gif');
-    width: 100%;
-    border: none;
-    border-collapse: collapse;
-}
-table.top tr td {
-    padding: 5px;
-}
+	a { color:black; text-decoration:none; }
+	table#index {
+		background-color: #FFFF88;
+		border: none;
+		width: 170px;
+		border-collapse: collapse;            
+	}
+	table#index tr td {
+	    padding: 5px; 
+	}
+	table.top {
+	    background-image: url('images/bkg-topbar.gif');
+	    width: 100%;
+	    border: none;
+	    border-collapse: collapse;
+	}
+	table.top tr td {
+	    padding: 5px;
+	}
 </style>
 </head>
 <body>
