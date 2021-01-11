@@ -4,44 +4,60 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
-<title>BPSP</title>
-<style>
-table.top {
-    background-image: url('../images/bkg-topbar.gif');
-    width: 100%;
-    border: none;
-    border-collapse: collapse;
-}
-table.top tr td {
-    padding: 5px;
-}
-</style>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+   <!-- Bootstrap core JavaScript -->
+  <script src="../resource/vendor/jquery/jquery.min.js"></script>
+  <script src="../resource/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  
+
+  <title>BPSP</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../resource/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="../resource/css/shop-homepage.css" rel="stylesheet">
 </head>
+
 <body bgcolor="white">
-<table class="top">
-  <tr>
-    <td>
-      <a href="<c:url value="/"/>">
-        <img border="0" src="../images/logo.png" /><img alt="0" src="../images/logoM.png" /></a>
-      
-    </td>
-    <td style="text-align:right">
-      <a href="<c:url value='/shop/viewCart'/>"> <!-- 장바구니 링크 -->
-        <img border="0" name="img_cart" src="../images/cart.gif" /></a>
-      <img border="0" src="../images/separator.gif" />
-      <c:if test="${empty session}" >
-        <a href="<c:url value="/shop/loginForm"/>"> <!-- 로그인 링크 -->
-          <img border="0" name="img_signin" src="../images/sign-in.gif" /></a>
-      </c:if>
-      <c:if test="${!empty session}" >
-        <a href="<c:url value="/shop/logout"/>"> <!-- 로그아웃 링크 -->
-          <img border="0" name="img_signout" src="../images/sign-out.gif" /></a>
-        <img border="0" src="../images/separator.gif" />
-        <a href="<c:url value="/mypage/main"/>"> <!-- 마이페이지 링크 -->
-          <img border="0" name="img_myaccount" src="../images/my_account.gif" /></a>
-      </c:if>
-    </td>
-   </tr>
-</table>
+<!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Sproute</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="<c:url value="/"/>">Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<c:url value='/shop/viewCart'/>">Cart</a>
+          </li>
+          <c:if test="${empty session}" >
+	          <li class="nav-item">
+	            <a class="nav-link" href="<c:url value="/shop/loginForm" />">Login</a>
+	          </li>
+	      </c:if>
+          
+          <c:if test="${!empty session}" >
+	          <li class="nav-item">
+	            <a class="nav-link" href="<c:url value="/shop/logout"/>">LogOut</a>
+	          </li>
+	          <li class="nav-item">
+	            <a class="nav-link" href="<c:url value="/mypage/main"/>">MyPage</a>
+	          </li>
+          </c:if>
+        </ul>
+      </div>
+    </div>
+  </nav>
 </body>
 </html>

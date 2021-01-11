@@ -3,50 +3,86 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>BPSP</title>
-<style>
-#t table {
-	background-color: #FFFF88;	
-	border: none;
-	width: 170px;
-	border-collapse: collapse;
-}
-table tr td {
-    padding: 5px; 
-}
-</style>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+   <!-- Bootstrap core JavaScript -->
+  <script src="resource/vendor/jquery/jquery.min.js"></script>
+  <script src="resource/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  
+
+  <title>Sproute - Hompage</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="resource/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="resource/css/shop-homepage.css" rel="stylesheet">
+
 </head>
 <body>
-<table id="t" style="border:none;border-collapse:collpase;width:15%">
-	<tr>
-	 <td style="text-align:left;vertical-align:top;width:100%">
-      <table style="border:none;border-collapse:collapse;width:80%">
-        <tr>
-          <td valign="top">                    
-            <!-- SIDEBAR -->
-            <table id="index">
-              <tr>
-          	    <td>
-          	      <a href="<c:url value='/shop/viewCategory.do?categoryId=sale'/>">일반</a>
-          	    </td>
-          	  </tr>
-          	  <tr>
-          	    <td>
-          	      <a href="usedProduct">중고</a>
-          	    </td>
-          	  </tr>
-          	  <tr>
-          	    <td>
-          	      <a href="<c:url value="/shop/auctionProduct" />">경매</a>
-          	    </td>
-          	  </tr>
-            </table>
-          </td>
-        </tr>
-        </table>
-      </td>
-    </tr>
-</table>
+<!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-lg-3">
+
+        <h1 class="my-4">Sproute!</h1>
+        <div class="list-group">
+          <a href="<c:url value='/shop/viewCategory.do?categoryId=sale'/>" class="list-group-item">일반</a>
+          <a href="shop/usedProduct?" class="list-group-item">중고</a>
+          <a href="<c:url value="/shop/auctionProduct" />" class="list-group-item">경매</a>
+        </div>
+
+      </div>
+      <!-- /.col-lg-3 -->
+
+      <div class="col-lg-9">
+
+        <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+              <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="First slide">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Third slide">
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+
+        <div class="row">
+
+          
+
+        </div>
+        <!-- /.row -->
+
+      </div>
+      <!-- /.col-lg-9 -->
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
 </body>
 </html>

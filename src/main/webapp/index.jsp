@@ -11,8 +11,12 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+   <!-- Bootstrap core JavaScript -->
+  <script src="resource/vendor/jquery/jquery.min.js"></script>
+  <script src="resource/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  
 
-  <title>Shop Homepage - Start Bootstrap Template</title>
+  <title>Sproute - Hompage</title>
 
   <!-- Bootstrap core CSS -->
   <link href="resource/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -34,8 +38,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home
-              <span class="sr-only">(current)</span>
+            <a class="nav-link" href="<c:url value="/"/>">Home
             </a>
           </li>
           <li class="nav-item">
@@ -223,12 +226,6 @@
     </div>
     <!-- /.container -->
   </footer>
-
-  <!-- Bootstrap core JavaScript -->
-  
-  <script src="resource/vendor/jquery/jquery.min.js"></script>
-  <script src="resource/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
 </body>
 
 </html>
