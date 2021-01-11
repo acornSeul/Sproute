@@ -6,8 +6,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>일반상품전체보기</title>
+	<meta charset="UTF-8">
+	<title>일반상품전체보기</title>
 <style>
 a { color:black; text-decoration:none; }
 li { list-style:none; margin-left:-1px; z-index:1; }
@@ -25,18 +25,18 @@ div { text-align:center; }
 <body>
 <%@ include file="IncludeTop.jsp" %>
 <%--  <%@ include file="IncludeQuickHeader.jsp" %> --%>
-<center>
- <a href="<c:url value="/shop/selectProduct?categoryId=sale&productId=S001"/>">
-    유모차 <img border="0" src="../images/separator.gif" /></a>
- <a href="<c:url value="/shop/selectProduct?categoryId=sale&productId=S002"/>">
-    장난감 <img border="0" src="../images/separator.gif" /></a>
- <a href="<c:url value="/shop/selectProduct?categoryId=sale&productId=S003"/>">
-    옷 <img border="0" src="../images/separator.gif" /></a>
- <a href="<c:url value="/shop/selectProduct?categoryId=sale&productId=S004"/>">
-    신발 <img border="0" src="../images/separator.gif" /></a>
- <a href="<c:url value="/shop/selectProduct?categoryId=sale&productId=S005"/>">
-    모빌</a>
-</center>
+	<center>
+	 <a href="<c:url value="/shop/selectProduct?categoryId=sale&productId=S001"/>">
+	    유모차 <img border="0" src="../images/separator.gif" /></a>
+	 <a href="<c:url value="/shop/selectProduct?categoryId=sale&productId=S002"/>">
+	    장난감 <img border="0" src="../images/separator.gif" /></a>
+	 <a href="<c:url value="/shop/selectProduct?categoryId=sale&productId=S003"/>">
+	    옷 <img border="0" src="../images/separator.gif" /></a>
+	 <a href="<c:url value="/shop/selectProduct?categoryId=sale&productId=S004"/>">
+	    신발 <img border="0" src="../images/separator.gif" /></a>
+	 <a href="<c:url value="/shop/selectProduct?categoryId=sale&productId=S005"/>">
+	    모빌</a>
+	</center>
 <%@ include file="IncludeSidebar.jsp" %>
 <div>
    <c:choose>
@@ -56,6 +56,3 @@ div { text-align:center; }
 </div>
 </body>
 </html>
-
-
-
