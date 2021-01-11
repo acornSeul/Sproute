@@ -9,81 +9,29 @@
   <meta name="author" content="">
   <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
    <!-- Bootstrap core JavaScript -->
-  <script src="resource/vendor/jquery/jquery.min.js"></script>
-  <script src="resource/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../resource/vendor/jquery/jquery.min.js"></script>
+  <script src="../resource/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   
-
-  <title>Sproute - Hompage</title>
+  <title>Sproute - ProductList</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="resource/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../resource/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="resource/css/shop-homepage.css" rel="stylesheet">
+  <link href="../resource/css/shop-homepage.css" rel="stylesheet">
 
 </head>
 <body>
 <!-- Page Content -->
-  <div class="container">
-
-    <div class="row">
 
       <div class="col-lg-3">
-
         <h1 class="my-4">Sproute!</h1>
         <div class="list-group">
           <a href="<c:url value='/shop/viewCategory.do?categoryId=sale'/>" class="list-group-item">일반</a>
-          
           <a href="<c:url value='/shop/usedProduct'/>" class="list-group-item">중고</a>
           <a href="<c:url value="/shop/auctionProduct" />" class="list-group-item">경매</a>
         </div>
-
       </div>
       <!-- /.col-lg-3 -->
-
-      <div class="col-lg-9">
-
-        <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-          </ol>
-          <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active">
-              <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="First slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Second slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Third slide">
-            </div>
-          </div>
-          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-
-        <div class="row">
-
-          
-
-        </div>
-        <!-- /.row -->
-
-      </div>
-      <!-- /.col-lg-9 -->
-
-    </div>
-    <!-- /.row -->
-
-  </div>
-  <!-- /.container -->
 </body>
 </html>

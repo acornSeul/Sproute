@@ -14,10 +14,10 @@ div, h3 { text-align:center;}
 </head>
 <body>
 <script type="text/javascript">
-var message = '${message}';
-if (message != "") {
-   alert(message);
-}
+	var message = '${message}';
+	if (message != "") {
+	   alert(message);
+	}
 </script>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -36,13 +36,13 @@ if (message != "") {
 	</div>
 </div>
 
-  <!-- Footer -->
-  <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Sproute 2021</p>
-    </div>
-    <!-- /.container -->
-  </footer>
+ <!-- Footer -->
+ <footer class="py-5 bg-dark">
+   <div class="container">
+     <p class="m-0 text-center text-white">Copyright &copy; Sproute 2021</p>
+   </div>
+   <!-- /.container -->
+ </footer>
 </body>
 
 </html>
