@@ -27,7 +27,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Start Bootstrap</a>
+      <a class="navbar-brand" href="#">Sproute</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -67,7 +67,7 @@
 
       <div class="col-lg-3">
 
-        <h1 class="my-4">Shop Name</h1>
+        <h1 class="my-4">Sproute!</h1>
         <div class="list-group">
           <a href="<c:url value='/shop/viewCategory.do?categoryId=sale'/>" class="list-group-item">일반</a>
           <a href="shop/usedProduct?" class="list-group-item">중고</a>
@@ -219,7 +219,7 @@
   <!-- Footer -->
   <footer class="py-5 bg-dark">
     <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
+      <p class="m-0 text-center text-white">Copyright &copy; Sproute 2021</p>
     </div>
     <!-- /.container -->
   </footer>
