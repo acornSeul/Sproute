@@ -14,6 +14,7 @@ div, h3 { text-align:center;}
 </head>
 <body>
 <%@ include file="IncludeTop.jsp" %>
+<div class="container">
 <%@ include file="IncludeMypageBar.jsp" %>
 <script type="text/javascript">
 var message = '${message}';
@@ -21,8 +22,7 @@ if (message != "") {
    alert(message);
 }
 </script>
-<h3>${userName}님의 마이페이지</h3>
-<div>
+${userName}님의 마이페이지
    <ul>
       <li><img border="0" src="../images/m_iconM.png" /></li>
    </ul>
