@@ -73,7 +73,7 @@
         <h1 class="my-4">Sproute!</h1>
         <div class="list-group">
           <a href="<c:url value='/shop/viewCategory.do?categoryId=sale'/>" class="list-group-item">일반</a>
-          <a href="shop/usedProduct?" class="list-group-item">중고</a>
+          <a href="<c:url value='/shop/usedProduct'/>" class="list-group-item">중고</a>
           <a href="<c:url value="/shop/auctionProduct" />" class="list-group-item">경매</a>
         </div>
 
