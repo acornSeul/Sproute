@@ -39,14 +39,22 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="<c:url value='/shop/viewCart'/>">Cart</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li>
+          <c:if test="${empty session}" >
+	          <li class="nav-item">
+	            <a class="nav-link" href="<c:url value="/shop/loginForm" />">Login</a>
+	          </li>
+	      </c:if>
+          
+          <c:if test="${!empty session}" >
+	          <li class="nav-item">
+	            <a class="nav-link" href="<c:url value="/shop/logout"/>">LogOut</a>
+	          </li>
+	          <li class="nav-item">
+	            <a class="nav-link" href="<c:url value="/mypage/main"/>">MyPage</a>
+	          </li>
+          </c:if>
         </ul>
       </div>
     </div>
