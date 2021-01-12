@@ -7,7 +7,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>일반상품전체보기</title>
+	<title>Sproute - AuctionProduct</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -26,9 +26,12 @@
 	    신발 <img border="0" src="../images/separator.gif" /></a>
 	 <a href="<c:url value="/shop/selectProduct?categoryId=sale&productId=S005"/>">
 	    모빌</a>
-</center><br/>
+</center>
 	
 	<div class="container">
+		<div align="right" style="margin:0px 30px 0px 0px">
+			<a href="<c:url value="addAuctionItem" />" class="btn btn-primary btn-sm">상품 등록</a>
+		</div><br/>
 	<div class="row">
 	<!-- 경매에서 중고로 넘어가는 부분이 오류남 controller 문제로 예상됨 -->
 		<%@ include file="IncludeSidebar.jsp" %>
@@ -46,9 +49,11 @@
 		                <h5>${item.price}</h5>
 		                <!-- <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p> -->
 		              </div>
+		           <!--  
 		              <div class="card-footer">
 		                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
 		              </div>
+		           -->
 		            </div>
 		          </div>
 		          </c:forEach>
