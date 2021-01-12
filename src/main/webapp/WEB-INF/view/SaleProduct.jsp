@@ -7,7 +7,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>일반상품전체보기</title>
+	<title>Sproute - SaleProduct</title>
 
 </head>
 <body>
