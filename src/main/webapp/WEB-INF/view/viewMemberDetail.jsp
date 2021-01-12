@@ -20,7 +20,7 @@
   <style>
 a { color:black; text-decoration:none; }
 li { list-style:none; margin-left:-1px; z-index:1; }
-ul { display:inline-block; *display:inline; zoom:1; }
+ul { display:inline-block; *display:inline; zoom:1;  margin-left: auto; margin-right: auto;}
 h3 { text-align:center;}
 </style>
 </head>
@@ -33,7 +33,7 @@ h3 { text-align:center;}
       
       <div class="col-lg-9">
        <h3 class="my-4">${userName}님의 회원정보</h3>
-      		<ul text-align:left>
+      		<ul>
       			<li><c:out value="아이디 : ${detailReq.userId}" /></li>
     			<li><c:out value="이름 : ${detailReq.name}" /></li>
     			<li><c:out value="이메일 : ${detailReq.email}" /></li>
@@ -43,7 +43,7 @@ h3 { text-align:center;}
     			<li><c:out value="성별 : ${detailReq.sex}" /></li>
     			<li>&nbsp;</li>
     			<li><a href="<c:url value="/shop/viewModifyForm" />">수정</a>
-    		</ul>   
+    		</ul>  
     </div>
       <!-- /.col-lg-9 -->
     </div>

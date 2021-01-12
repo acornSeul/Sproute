@@ -9,7 +9,7 @@
 a { color:black; text-decoration:none; }
 li { list-style:none; margin-left:-1px; z-index:1; }
 ul { display:inline-block; *display:inline; zoom:1; }
-div, h3 { text-align:center;}
+h3 { text-align:center;}
 </style>
 </head>
 <body>
@@ -20,9 +20,7 @@ div, h3 { text-align:center;}
 	}
 </script>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <%@ include file="IncludeTop.jsp" %>
-</nav>
 
 <div class="container">
 	<div class="row">
@@ -46,3 +44,8 @@ div, h3 { text-align:center;}
 </body>
 
 </html>
+
+
+
+
+
