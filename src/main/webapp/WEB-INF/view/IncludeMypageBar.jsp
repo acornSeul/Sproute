@@ -24,7 +24,7 @@
 <body>
 <!-- Page Content -->
       <div class="col-lg-3">
-        <h1 class="my-4">Sproute!</h1>
+        <h1 class="my-4">MyPage</h1>
         <div class="list-group">
           <a href="<c:url value='/mypage/MyBidMain'/>" class="list-group-item">입찰신청내역</a>
           <a href="<c:url value="/mypage/MyOrderList" />" class="list-group-item">구매내역</a>
