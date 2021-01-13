@@ -32,7 +32,7 @@
     <div class="row form-group">
       <%@ include file="IncludeMypageBar.jsp" %>
       
-      <div class="col-lg-9">
+      <div class="col-lg-9"> 
       <h3 class="my-4">회원정보 수정</h3>
       	<!-- 아이디 -->
 			<form:form modelAttribute="modifyReq" method="post" action="modify">

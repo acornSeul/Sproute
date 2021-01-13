@@ -14,7 +14,7 @@
   <title>Sproute - Hompage</title>
   <!-- Bootstrap core CSS -->
   <link href="../resource/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+ 
   <!-- Custom styles for this template -->
   <link href="../resource/css/shop-homepage.css" rel="stylesheet">
   <style>
