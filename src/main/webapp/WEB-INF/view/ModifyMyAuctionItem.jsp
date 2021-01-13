@@ -116,7 +116,7 @@
 		    		<form:input path="item.stock" class="form-control"/>
 		    		<form:errors path="item.stock"/>
 				 </div>
-			</div>
+			</div> 
     		<div class="form-group row">
 				 <label for="item.description" class="col-sm-2 col-form-label col-form-label-sm">상품 설명 </label>
 				 <div class="col-sm-3">
