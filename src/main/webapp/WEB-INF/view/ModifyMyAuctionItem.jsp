@@ -124,7 +124,7 @@
 		    		<form:errors path="item.description"/>
 				 </div>
 			</div>  
-			    		
+			    		 
     	<form:hidden path="item.price" value="${modifyAuc.item.price}"/>
     	<form:hidden path="auctionId" value="${modifyAuc.auctionId}"/>
     	<form:hidden path="item.categoryId" value="${modifyAuc.item.categoryId}"/>

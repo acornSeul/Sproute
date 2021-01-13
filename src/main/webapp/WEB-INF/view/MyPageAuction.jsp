@@ -26,7 +26,7 @@
 	    text-align:center;
 	    margin: auto;
 	    align:center; 
-	}
+	} 
 </style> 
 </head>
 <body>
