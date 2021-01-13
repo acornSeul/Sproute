@@ -128,7 +128,7 @@
     	<form:hidden path="item.price" value="${modifyAuc.item.price}"/>
     	<form:hidden path="auctionId" value="${modifyAuc.auctionId}"/>
     	<form:hidden path="item.categoryId" value="${modifyAuc.item.categoryId}"/>
-    	<form:hidden path="deadline" value="${modifyAuc.deadline}"/>
+    	<form:hidden path="deadline" value="${modifyAuc.deadline}"/> 
     		
     	<input type="submit" value="수정" class="btn btn-primary"/>
     	
