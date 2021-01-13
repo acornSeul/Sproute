@@ -27,7 +27,7 @@
 	    margin: auto;
 	    align:center;
 	}
-</style>
+</style> 
 </head>
 <body>
 <%@ include file="IncludeTop.jsp" %>

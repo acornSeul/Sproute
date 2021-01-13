@@ -123,7 +123,7 @@
 		    		<form:input path="item.description" class="form-control"/>
 		    		<form:errors path="item.description"/>
 				 </div>
-			</div>
+			</div> 
 			    		
     	<form:hidden path="item.price" value="${modifyAuc.item.price}"/>
     	<form:hidden path="auctionId" value="${modifyAuc.auctionId}"/>
