@@ -33,22 +33,54 @@ h3 { text-align:center;}
       
       <div class="col-lg-9">
        <h3 class="my-4">${userName}님의 회원정보</h3>
-      		<ul>
-      			<li><c:out value="아이디 : ${detailReq.userId}" /></li>
-    			<li><c:out value="이름 : ${detailReq.name}" /></li>
-    			<li><c:out value="이메일 : ${detailReq.email}" /></li>
-    			<li><c:out value="주소 : ${detailReq.address}" /></li>
-    			<li><c:out value="전화번호 : ${detailReq.phone}" /></li>
-    			<li><c:out value="생년월일 : ${detailReq.birth}" /></li>
-    			<li><c:out value="성별 : ${detailReq.sex}" /></li>
-    			<li>&nbsp;</li>
-    			<li><a href="<c:url value="/shop/viewModifyForm" />">수정</a>
-    		</ul>  
+       		<div class="form-group row">
+				  <label for="userId" class="col-sm-2 col-form-label col-form-label-sm">아이디 </label>
+			         <div class="col-sm-3">
+			         	<input type="text" readonly class="form-control-plaintext" id="userId" value="${detailReq.userId}"/>
+			       </div>
+			</div>
+			<div class="form-group row">
+				  <label for="name" class="col-sm-2 col-form-label col-form-label-sm">이름 </label>
+			         <div class="col-sm-3">
+			         	<input type="text" readonly class="form-control-plaintext" id="name" value="${detailReq.name}"/>
+			       </div>
+			</div>
+			<div class="form-group row">
+				  <label for="email" class="col-sm-2 col-form-label col-form-label-sm">이메일 </label>
+			         <div class="col-sm-3">
+			         	<input type="text" readonly class="form-control-plaintext" id="email" value="${detailReq.email}"/>
+					</div>
+			</div>
+			<div class="form-group row">
+				  <label for="address" class="col-sm-2 col-form-label col-form-label-sm">주소 </label>
+			         <div class="col-sm-3">
+			         	<input type="text" readonly class="form-control-plaintext" id="address" value="${detailReq.address}"/>
+					</div>
+			</div>
+			<div class="form-group row">
+				  <label for="phone" class="col-sm-2 col-form-label col-form-label-sm">전화번호 </label>
+			         <div class="col-sm-3">
+			         	<input type="text" readonly class="form-control-plaintext" id="phone" value="${detailReq.phone}"/>
+					</div>
+			</div>
+			<div class="form-group row">
+				  <label for="birth" class="col-sm-2 col-form-label col-form-label-sm">생년월일 </label>
+			         <div class="col-sm-3">
+			         	<input type="text" readonly class="form-control-plaintext" id="birth" value="${detailReq.birth}"/>
+					</div>
+			</div>
+			<div class="form-group row">
+				  <label for="sex" class="col-sm-2 col-form-label col-form-label-sm">성별 </label>
+			         <div class="col-sm-3">
+			         	<input type="text" readonly class="form-control-plaintext" id="sex" value="${detailReq.sex}"/>
+					</div>
+			</div>
+			<a href="<c:url value="/shop/viewModifyForm" />" class="btn btn-primary btn-sm">수정</a><br/>
     </div>
       <!-- /.col-lg-9 -->
     </div>
     <!-- /.row -->
-  </div>
+  </div><br/><br/>
   <!-- /.container -->
 
   <!-- Footer -->
