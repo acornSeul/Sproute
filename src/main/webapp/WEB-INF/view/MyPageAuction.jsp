@@ -25,7 +25,7 @@
 	    border-collapse: collapse;
 	    text-align:center;
 	    margin: auto;
-	    align:center;
+	    align:center; 
 	}
 </style> 
 </head>
