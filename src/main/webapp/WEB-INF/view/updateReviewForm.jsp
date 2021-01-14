@@ -16,9 +16,8 @@
 				<h3 class="my-4">${userName}님이작성한 리뷰 수정</h3>
 				<form:form modelAttribute="updateReviewReq" method="POST">
 					<!-- 제목 -->
-					<div class="form-group row"> 
-						<label for="title"
-							class="col-sm-2 col-form-label col-form-label-sm">제목</label>
+					<div class="form-group row">
+						<label for="title" class="col-sm-2 col-form-label col-form-label-sm">제목</label>
 						<div class="col-sm-3">
 							<form:input path="title" />
 							<form:errors path="title" />
@@ -26,11 +25,9 @@
 					</div>
 					<!-- 별점 -->
 					<div class="form-group row">
-						<label for="rating"
-							class="col-sm-2 col-form-label col-form-label-sm">별점</label>
+						<label for="rating" class="col-sm-2 col-form-label col-form-label-sm">별점</label>
 						<div class="form-check form-check-inline">
-							<form:radiobutton path="rating" value="5.0"
-								class="form-check-input" />
+							<form:radiobutton path="rating" value="5.0" class="form-check-input" />
 							<label class="form-check-label" for="rating">5.0</label>
 						</div>
 						<div class="form-check form-check-inline">
@@ -53,14 +50,17 @@
 					</div>
 					<!-- 내용 -->
 					<div class="form-group">
-						<label for="content" class="col-sm-2 col-form-label col-form-label-sm">내용</label>
+						<label for="content"
+							class="col-sm-2 col-form-label col-form-label-sm">내용</label>
 						<form:textarea path="content" rows="3" class="form-control"></form:textarea>
 						<form:errors path="content" />
 					</div>
-					
-					<input type="hidden" name="reviewId" value="${updateReviewReq.reviewId }" />
-					<input type="hidden" name="itemId" value="${updateReviewReq.itemId }" />
-					
+
+					<input type="hidden" name="reviewId"
+						value="${updateReviewReq.reviewId }" />
+					<input type="hidden" name="itemId"
+						value="${updateReviewReq.itemId }" />
+
 					<div class="form-group mt-4 mb-0">
 						<input type="submit" value="등록" class="btn btn-outline-primary" />
 					</div>
@@ -72,5 +72,12 @@
 	<!-- /.row -->
 	</div>
 	<!-- /.container -->
+	<!-- Footer -->
+	<footer class="py-5 bg-dark">
+		<div class="container">
+			<p class="m-0 text-center text-white">Copyright &copy; Sproute
+				2021</p>
+		</div>
+	</footer>
 </body>
 </html>
