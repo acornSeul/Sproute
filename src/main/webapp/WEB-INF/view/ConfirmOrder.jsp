@@ -49,7 +49,7 @@
     </tr>
     <tr>
       <td>name:</td>
-      <td>${orderForm.order.name}</td>
+      <td>${orderForm.order.userName}</td>
     </tr>
      <tr>
       <td>Address:</td>
