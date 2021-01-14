@@ -41,7 +41,7 @@
                <th scope="col">상품 코드</th>
                <th scope="col">상품명</th>
                <th scope="col">등록 금액</th>
-               <th scope="col"> </th>
+               <th scope="col">관리</th>
              </tr>
            </thead>
            <tbody>

@@ -36,9 +36,9 @@
 				</div>
 		</div>
 		<div class="form-group row">
-       		<label for="description" class="col-sm-2 col-form-label col-form-label-sm">설명</label>
-       			<div class="col-sm-3"> 
-       				<form:input path="description" />
+       		<label for="description" class="col-sm-2 col-form-label col-form-label-sm">상품 설명</label>
+       			<div class="col-sm-8"> 
+       				<form:textarea path="description" />
 					<form:errors path="description" />
 				</div>
 		</div>	

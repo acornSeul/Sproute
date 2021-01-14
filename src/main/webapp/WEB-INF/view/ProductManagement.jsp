@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 <title>MyPage</title>
 <style>
-	h4 { text-align:center;}
+	table,h4 { text-align:center;}
 </style>
 </head>
 <body>
@@ -30,7 +30,7 @@
 						<tr>
 							<th scope="col">상품번호</th>
 							<th scope="col">상품명</th>
-							<th scope="col">설정</th>
+							<th scope="col">관리</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -38,8 +38,8 @@
 							<tr>
 								<td>${item.itemId}</td>
 								<td>${item.title}</td>
-								<td><a href='<c:url value="updateUsedProduct"><c:param name="itemId" value="${item.itemId}"/></c:url>'>수정</a>
-								<a href='<c:url value="deleteUsedProduct"><c:param name="itemId" value="${item.itemId}"/></c:url>'>삭제</a></td>
+								<td><a href='<c:url value="updateUsedProduct"><c:param name="itemId" value="${item.itemId}"/></c:url>'><strong>수정</strong></a>
+								<a href='<c:url value="deleteUsedProduct"><c:param name="itemId" value="${item.itemId}"/></c:url>'><strong>삭제</strong></a></td>
 							</tr>
 						</c:forEach>
 					</tbody>

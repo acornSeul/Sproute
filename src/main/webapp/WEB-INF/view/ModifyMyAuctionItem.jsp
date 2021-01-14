@@ -12,7 +12,7 @@
    <!-- Bootstrap core JavaScript -->
   <script src="../resource/vendor/jquery/jquery.min.js"></script>
   <script src="../resource/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <title>나의 입찰내역</title>
+  <title>Sproute - AddUsedItem</title>
   <!-- Bootstrap core CSS -->
   <link href="../resource/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -119,8 +119,8 @@
 			</div> 
     		<div class="form-group row">
 				 <label for="item.description" class="col-sm-2 col-form-label col-form-label-sm">상품 설명 </label>
-				 <div class="col-sm-3">
-		    		<form:input path="item.description" class="form-control"/>
+				 <div class="col-sm-8">
+		    		<form:textarea path="item.description" class="form-control"/>
 		    		<form:errors path="item.description"/>
 				 </div> 
 			</div>
