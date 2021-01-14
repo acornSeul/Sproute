@@ -43,6 +43,7 @@ public class MyOrderListController {
 				itemMap.put(item.getItemId(), item);
 			}
 		}
+		
 		model.addAttribute("items", itemMap);
  		model.addAttribute("orders", orders);
 		return "MyPageOrderList";

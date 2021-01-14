@@ -24,7 +24,7 @@ public class Order {
    @Pattern(regexp="^\\d{2}/\\d{2}$")
    String expireDate;
    @NotBlank
-   String name; // 회원이름
+   String userName; // 회원이름
    String itemId;
    public String getOrderId() {
       return orderId;
@@ -80,11 +80,11 @@ public class Order {
    public void setExpireDate(String expireDate) {
       this.expireDate = expireDate;
    }
-   public String getName() {
-      return name;
+   public String getUserName() {
+      return userName;
    }
-   public void setName(String name) {
-      this.name = name;
+   public void setUserName(String userName) {
+      this.userName = userName;
    }
    public String getItemId() {
       return itemId;
@@ -93,7 +93,7 @@ public class Order {
       this.itemId = itemId;
    }
    public void initOrder(Account account) {
-      name = account.getName();
+	   userName = account.getName();
       orderDate = new Date();
       userId = account.getUserId();
       
@@ -108,7 +108,7 @@ public class Order {
    public String toString() {
       return "Order [orderId=" + orderId + ", userId=" + userId + ", orderDate=" + orderDate + ", shipAddress="
             + shipAddress + ", address=" + address + ", totalPrice=" + totalPrice + ", cardType=" + cardType
-            + ", cardNumber=" + cardNumber + ", expireDate=" + expireDate + ", name=" + name + "itemId=" + itemId + "]";
+            + ", cardNumber=" + cardNumber + ", expireDate=" + expireDate + ", userName=" + userName + "itemId=" + itemId + "]";
    }
    
 }

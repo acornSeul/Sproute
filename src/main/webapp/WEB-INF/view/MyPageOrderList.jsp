@@ -12,7 +12,7 @@
    <!-- Bootstrap core JavaScript -->
   <script src="../resource/vendor/jquery/jquery.min.js"></script>
   <script src="../resource/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <title>Sproute - Hompage</title>
+  <title>Sproute - MyOrder</title>
   <!-- Bootstrap core CSS -->
   <link href="../resource/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -42,8 +42,9 @@
              <tr>
                <th scope="col">주문 일자</th>
                <th scope="col">상품명</th>
+               <th scope="col">주문자</th>
                <th scope="col">배송지</th>
-               <th scope="col"> </th>
+               <th scope="col">관리</th>
              </tr>
            </thead>
            <tbody>
@@ -73,7 +74,11 @@
 					<c:out value="존재하지 않는 상품입니다."/>
        			</c:if>
                </td>
+               <td>
+                  <c:out value="${orders.userName}"/></td>
                <td> ${orders.shipAddress}</td>
+               	<td><a href='<c:url value="/mypage/MyOrderList/cancel">
+	 				<c:param name="orderId" value="${orders.orderId}"/></c:url>'><strong>주문 취소</strong></a></td>
             </tr>
 	 			
           </c:forEach>
