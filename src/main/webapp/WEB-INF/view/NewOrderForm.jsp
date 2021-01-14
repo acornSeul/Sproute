@@ -43,8 +43,8 @@
     </tr>
     <tr>
       <td>이름:</td>
-      <td><form:input path="order.name" /> 
-        <form:errors path="order.name" /></td>
+      <td><form:input path="order.userName" /> 
+        <form:errors path="order.userName" /></td>
     </tr>
     <tr>
       <td>주소:</td>
