@@ -11,7 +11,6 @@
 
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
 	<%@ include file="IncludeTop.jsp" %>
 </nav>
 <%--  <%@ include file="IncludeQuickHeader.jsp" %> --%>
@@ -27,6 +26,7 @@
 	    신발 <img border="0" src="../images/separator.gif" /></a>
 	 <a href="<c:url value="/shop/selectProduct?categoryId=sale&productId=S005"/>">
 	    모빌</a>
+	    
 </center><br/>
 	
 	<div class="container">
