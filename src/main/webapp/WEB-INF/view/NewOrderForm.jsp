@@ -8,64 +8,94 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>BPSP</title>
+<title>Sproute - 유아용품쇼핑몰</title>
+<style>
+a { color:black; text-decoration:none; }
+li { list-style:none; margin-left:-1px; z-index:1; }
+ul { display:inline-block; *display:inline; zoom:1; }
+h3 { text-align:center;}
+</style>
 </head>
 <body>
+<script type="text/javascript">
+	var message = '${message}';
+	if (message != "") {
+	   alert(message);
+	}
+</script>
 <%@ include file="IncludeTop.jsp" %>
-<%@ include file="IncludeSidebar.jsp" %>
-<div align="center">
-<form:form modelAttribute="orderForm" method="post">
+
+<div class="container">
+	<div class="row">
+		<%@ include file="IncludeMypageBar.jsp" %>
+			<div class="col-lg-9">
+				<h3 class="my-4">주문하기</h3>
+					
+				<form:form modelAttribute="orderForm" method="post">
   <form:errors cssClass="error" /> <br><br>
-  
-  <table>
-    <tr>
-      <td colspan="2">
-        <font color="green" size="4"><b>Payment Details</b></font></td>
-    </tr>
-    <tr>
-      <td>Card Type:</td>
-      <td><form:select path="order.cardType" items="${creditCardTypes}" />
-        <form:errors path="order.cardType" /></td>
-    </tr>
-    <tr>
-      <td>Card Number:</td>
-      <td><form:input path="order.cardNumber" /> 
-        <form:errors path="order.cardNumber" /></td>
-    </tr>
-    <tr>
-      <td>Expiry Date (MM/YY):</td>
-      <td><form:input path="order.expireDate" /> 
-        <form:errors path="order.expireDate" /></td>
-    </tr>
-    <tr>
-      <td colspan="2">
-        <font color="green" size="4"><b>Billing Address</b></font></td>
-    </tr>
-    <tr>
-      <td>이름:</td>
-      <td><form:input path="order.name" /> 
-        <form:errors path="order.name" /></td>
-    </tr>
-    <tr>
-      <td>주소:</td>
-      <td><form:input path="order.address" />
-        <form:errors path="order.address" /></td>
-    </tr>
-    <tr>
-      <td>ShipAddress:</td>
-      <td><form:input path="order.shipAddress" />
-        <form:errors path="order.shipAddress" /></td>
-    </tr>
-    <tr>
-      <td colspan="2">
-        <form:checkbox path="shippingAddressRequired"
-          label="Ship to different address..." /></td>
-    </tr>
-  </table>
-  <p>
-    <input type="image" src="../images/button_submit.gif">
-  </p>
-</form:form>
+  	<font color="green" size="4"><b>Payment Details</b></font></td>
+        <div class="form-group row">
+			<label for="order.cardType" class="col-sm-2 col-form-label col-form-label-sm">Card Type:</label>
+			<div class="col-sm-3">
+			<form:select path="order.cardType"  items="${creditCardTypes}" />
+			<form:errors path="order.cardType" />
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="order.cardNumber" class="col-sm-2 col-form-label col-form-label-sm">Card Number</label>
+			<div class="col-sm-3">
+			<form:input path="order.cardNumber" />
+			<form:errors path="order.cardNumber" />
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="order.expireDate" class="col-sm-2 col-form-label col-form-label-sm">Expiry Date (MM/YY):</label>
+			<div class="col-sm-3">
+			<form:input path="order.expireDate" />
+			<form:errors path="order.expireDate" />
+			</div>
+		</div>
+
+		 <font color="green" size="4"><b>Billing Address</b></font></td>
+		 <div class="form-group row">
+			<label for="order.name" class="col-sm-2 col-form-label col-form-label-sm">이름:</label>
+			<div class="col-sm-3">
+			<form:input path="order.name" />
+			<form:errors path="order.name" />
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="order.address" class="col-sm-2 col-form-label col-form-label-sm">주소:</label>
+			<div class="col-sm-3">
+			<form:input path="order.address"/>
+			<form:errors path="order.address" />
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="order.shipAddress" class="col-sm-2 col-form-label col-form-label-sm">ShipAddress</label>
+			<div class="col-sm-3">
+			<form:input path="order.shipAddress"/>
+			<form:errors path="order.shipAddress" />
+			</div>
+		</div>
+		<div class="form-group form-check">
+    	<form:checkbox path="shippingAddressRequired" class="form-check-input" label="Ship to different address..."/>
+  	</div>
+  	
+  	<input type="image" src="../images/button_submit.gif">
+</form:form>	
 </div>
+</div>
+</div>
+
+ <!-- Footer -->
+ <footer class="py-5 bg-dark">
+   <div class="container">
+     <p class="m-0 text-center text-white">Copyright &copy; Sproute 2021</p>
+   </div>
+   <!-- /.container -->
+ </footer>
 </body>
+
 </html>
+

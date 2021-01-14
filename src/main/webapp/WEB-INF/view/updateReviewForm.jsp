@@ -13,7 +13,7 @@
 		<div class="row form-group">
 			<%@ include file="IncludeMypageBar.jsp"%>
 			<div class="col-lg-9">
-				<h3 class="my-4">${userName}님이작성한 리뷰 수정</h3>
+				<h3 class="my-4">${userName}님이 작성한 리뷰 수정</h3>
 				<form:form modelAttribute="updateReviewReq" method="POST">
 					<!-- 제목 -->
 					<div class="form-group row">
@@ -75,8 +75,7 @@
 	<!-- Footer -->
 	<footer class="py-5 bg-dark">
 		<div class="container">
-			<p class="m-0 text-center text-white">Copyright &copy; Sproute
-				2021</p>
+			<p class="m-0 text-center text-white">Copyright &copy; Sproute 2021</p>
 		</div>
 	</footer>
 </body>
