@@ -159,7 +159,10 @@
 			          </tr>
 				</tbody>
 			</table>	     
-      </form>   
+      </form>
+        <div style="text-align:center">
+         <a href='<c:url value="/shop/newOrder.do"/>' class="btn btn-primary">구매하기</a>
+      </div>   
      
 	   </div>
 	</div>
