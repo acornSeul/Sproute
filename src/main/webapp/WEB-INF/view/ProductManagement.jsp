@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 <title>MyPage</title>
 <style>
-h3 { text-align:center;}
+	h4 { text-align:center;}
 </style>
 </head>
 <body>
@@ -24,7 +24,7 @@ h3 { text-align:center;}
 	<div class="row">
 		<%@ include file="IncludeMypageBar.jsp" %>
 			<div class="col-lg-9">
-				<h3 class="my-4">등록한 중고 상품</h3>
+				<h4 class="my-4">${userName}님의 등록한 중고 상품</h4>
 				<table class="table">
 					<thead class="thead-light">
 						<tr>
@@ -46,7 +46,7 @@ h3 { text-align:center;}
 				</table>
 			</div>
 	</div>
-</div>
+</div><br/><br/>
  <!-- Footer -->
  <footer class="py-5 bg-dark">
    <div class="container">

@@ -5,6 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>MyPage Main</title>
+<style>
+	h4 { text-align:center;}
+</style>
 <script type="text/javascript">
 function moveDelete(){
 	
@@ -24,7 +27,7 @@ if (message != "") {
 	<div class="row">
 		<%@ include file="IncludeMypageBar.jsp"%>
 		<div class="col-lg-9">
-			<h3 class="my-4">${userName}님이 작성한 리뷰입니다.</h3>
+			<h4 class="my-4">${userName}님의 작성한 후기</h4>
 			<table class="table">
 <thead class="thead-light">
     <tr>
@@ -51,7 +54,7 @@ if (message != "") {
 </table>
 		</div>
 	</div>
-</div>
+</div><br/><br/>
 
 <!-- Footer -->
 <footer class="py-5 bg-dark">

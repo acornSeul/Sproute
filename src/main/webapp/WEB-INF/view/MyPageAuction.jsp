@@ -19,9 +19,7 @@
   <link href="../resource/css/shop-homepage.css" rel="stylesheet">
 <style>
    a { color:black; text-decoration:none; }
-   li { list-style:none; margin-left:-1px; z-index:1; }
-   ul { display:inline-block; *display:inline; zoom:1; }
-   table, h3 {
+   table, h4 {
        border-collapse: collapse;
        text-align:center;
        margin: auto;
@@ -36,7 +34,7 @@
     <div class="row">
       <%@ include file="IncludeMypageBar.jsp" %>
       <div class="col-lg-9">
-       <h3 class="my-4">${userName}가 등록한 경매 아이템</h3>
+       <h4 class="my-4">${userName}님의 등록한 경매 상품</h4>
         <table class="table">
            <thead class="thead-light">
              <tr>

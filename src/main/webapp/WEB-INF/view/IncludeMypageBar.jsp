@@ -29,7 +29,7 @@
           <a href="<c:url value='/mypage/MyBidMain'/>" class="list-group-item">입찰신청내역</a>
           <a href="<c:url value="/mypage/MyOrderList" />" class="list-group-item">구매내역</a>
           <a href="<c:url value="/shop/ProductManagement" />" class="list-group-item">상품등록관리 - 중고</a>
-		  <a href="<c:url value="/mypage/MyAuctionMain"/>" class="list-group-item">상품등록관리(경매)</a>
+		  <a href="<c:url value="/mypage/MyAuctionMain"/>" class="list-group-item">상품등록관리 - 경매</a>
 		  <a href="<c:url value="/mypage/memberDetail" />" class="list-group-item">회원정보관리</a>
 		  <a href="<c:url value="/mypage/myReview" />" class="list-group-item">리뷰 관리</a>
         </div>

@@ -18,17 +18,14 @@
 
   <!-- Custom styles for this template -->
   <link href="../resource/css/shop-homepage.css" rel="stylesheet">
-  <style>
-a { color:black; text-decoration:none; }
-li { list-style:none; margin-left:-1px; z-index:1; }
-ul { display:inline-block; *display:inline; zoom:1; }
-h3 { text-align:center;}
-table {
-    border-collapse: collapse;
-    text-align:center;
-    margin: auto;
-    align:center;
-}
+<style>
+   a { color:black; text-decoration:none; }
+   table, h4 {
+       border-collapse: collapse;
+       text-align:center;
+       margin: auto;
+       align:center; 
+   } 
 </style>
 </head>
 <body>
@@ -38,55 +35,55 @@ table {
     <div class="row">
       <%@ include file="IncludeMypageBar.jsp" %>
       <div class="col-lg-9">
-       <h3 class="my-4"><b>${userName}'s 주문목록</b></h3>
-      <table>
-	 <c:forEach var="orders" items="${orders}">
-	    <tr>
-	 		<td colspan="2"><font color="darkgreen" size="4"><b>Order Date :</b></font> ${orders.orderDate}</td>
-	 	</tr>
-	 	<tr>
-	 	<td colspan="2"><font color="yellowgreen" size="2"><b>Item :</b></font>
-	 		<c:if test='${not empty items[orders.itemId]}'>
-	 		<c:if test='${items[orders.itemId].categoryId.equals("sale")}'>
-                 	<a href='<c:url value="/shop/viewItemDetail.do">
-                  	<c:param name="itemId" value="${orders.itemId}"/></c:url>'>
-                    <font color="black">${items[orders.itemId].title}</font></a>
-                 </c:if>
-                 <c:if test='${items[orders.itemId].categoryId.equals("used")}'>
-                 	<a href='<c:url value="/shop/viewProduct">
-                 	<c:param name="itemId" value="${orders.itemId}"/></c:url>'>
-                    <font color="black">${items[orders.itemId].title}</font></a>
-                 </c:if>
-                 <c:if test='${items[orders.itemId].categoryId.equals("Auction")}'>
-                 	<a href='<c:url value="/shop/auctionItemDetail">
-                 	<c:param name="itemId" value="${orders.itemId}"/></c:url>'>
-                    <font color="black">${items[orders.itemId].title}</font></a>
-            </c:if>
-            </c:if>
-       		<c:if test='${empty items[orders.itemId]}'>
-				<c:out value="존재하지 않는 상품입니다."/>
-       		</c:if>
-            </td>
-	 	</tr>
-	 	<tr>
-	 		<td colspan="2"><font color="yellowgreen" size="2"><b>Address :</b></font> ${orders.address}</td>
-	 		<td colspan="2"><font color="yellowgreen" size="2"><b>Ship Address :</b></font> ${orders.shipAddress}</td>
-	 	</tr>
-	 	<tr>
-	 	    <td colspan="2"><font color="yellowgreen" size="2"><b>Card Type :</b></font> ${orders.cardType}</td>
-	 		<td colspan="2"><font color="yellowgreen" size="2"><b>Card Number :</b></font> ${orders.cardNumber}</td>
-	 	</tr>
-	 	<tr>
-	 	<td align="right"></td>
-	 	<td align="right"><a href='<c:url value="/mypage/MyOrderList/cancel">
-	 	<c:param name="orderId" value="${orders.orderId}"/></c:url>'>주문 취소</a></td>
-	 </c:forEach>
-    </table> 
+       <h4 class="my-4">${userName}님의 구매 내역</h4>
+       
+        <table class="table">
+           <thead class="thead-light">
+             <tr>
+               <th scope="col">주문 일자</th>
+               <th scope="col">상품명</th>
+               <th scope="col">배송지</th>
+               <th scope="col"> </th>
+             </tr>
+           </thead>
+           <tbody>
+           <c:forEach var="orders" items="${orders}">
+            <tr>
+               <td>
+                  <c:out value="${orders.orderDate}"/></td>
+               <td>
+               	<c:if test='${not empty items[orders.itemId]}'>
+               		<c:if test='${items[orders.itemId].categoryId.equals("sale")}'>
+	                 	<a href='<c:url value="/shop/viewItemDetail.do">
+	                  	<c:param name="itemId" value="${orders.itemId}"/></c:url>'>
+	                    <font color="black">${items[orders.itemId].title}</font></a>
+                 	</c:if>
+                 	<c:if test='${items[orders.itemId].categoryId.equals("used")}'>
+	                 	<a href='<c:url value="/shop/viewProduct">
+	                 	<c:param name="itemId" value="${orders.itemId}"/></c:url>'>
+	                    <font color="black">${items[orders.itemId].title}</font></a>
+                 	</c:if>
+                 	<c:if test='${items[orders.itemId].categoryId.equals("Auction")}'>
+	                 	<a href='<c:url value="/shop/auctionItemDetail">
+	                 	<c:param name="itemId" value="${orders.itemId}"/></c:url>'>
+	                    <font color="black">${items[orders.itemId].title}</font></a>
+            		</c:if>
+               	</c:if>
+               	<c:if test='${empty items[orders.itemId]}'>
+					<c:out value="존재하지 않는 상품입니다."/>
+       			</c:if>
+               </td>
+               <td> ${orders.shipAddress}</td>
+            </tr>
+	 			
+          </c:forEach>
+        </tbody>
+      </table>
     </div>
       <!-- /.col-lg-9 -->
     </div>
     <!-- /.row -->
-  </div>
+  </div><br/><br/>
   <!-- /.container -->
 
   <!-- Footer -->
