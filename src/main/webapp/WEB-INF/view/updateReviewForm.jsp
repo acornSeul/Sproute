@@ -16,7 +16,7 @@
 				<h3 class="my-4">${userName}님이작성한 리뷰 수정</h3>
 				<form:form modelAttribute="updateReviewReq" method="POST">
 					<!-- 제목 -->
-					<div class="form-group row">
+					<div class="form-group row"> 
 						<label for="title"
 							class="col-sm-2 col-form-label col-form-label-sm">제목</label>
 						<div class="col-sm-3">
