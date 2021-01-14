@@ -13,10 +13,7 @@
    <!-- Bootstrap core JavaScript -->
   <script src="../resource/vendor/jquery/jquery.min.js"></script>
   <script src="../resource/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  
-
   <title>BPSP</title>
-
   <!-- Bootstrap core CSS -->
   <link href="../resource/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
