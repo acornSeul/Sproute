@@ -87,7 +87,8 @@ public class OrderController {
                Account account = accountService.selectMemberListByUserId(userSession);
                orderForm.getOrder().initOrder(account, cart);
                System.out.println(orderForm.getOrder());*/
-               return "NewOrderForm";   
+               
+            	return "NewOrderForm";   
             }
          } else {
             if(result.hasErrors()) {

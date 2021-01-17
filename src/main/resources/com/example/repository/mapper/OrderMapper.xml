@@ -8,7 +8,7 @@
 			SELECT SEQ_ORDER.nextval AS orderId FROM DUAL
 		</selectKey>
 		INSERT INTO ORDERITEM(ORDERID, ORDERDATE, SHIPADDRESS, ADDRESS, TOTALPRICE, CARDTYPE, CARDNUMBER, EXPIRYDATE, USERNAME, USERID, ITEMID)
-			VALUES(#{orderId}, #{orderDate}, #{shipAddress}, #{address}, #{totalPrice}, #{cardType}, #{cardNumber}, #{expireDate}, #{name}, #{userId}, #{itemId})
+			VALUES(#{orderId}, #{orderDate}, #{shipAddress}, #{address}, #{totalPrice}, #{cardType}, #{cardNumber}, #{expireDate}, #{userName}, #{userId}, #{itemId})
 	</insert>
 	
 	<select id = "selectOrderByUserId" parameterType="String" resultType="Order">
