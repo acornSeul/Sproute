@@ -16,16 +16,16 @@
 <%--  <%@ include file="IncludeQuickHeader.jsp" %> --%>
 <br/>
 <center>
-	 <a href="<c:url value="/shop/selectProduct?categoryId=sale&productId=S001"/>">
-	    유모차 <img border="0" src="../images/separator.gif" /></a>
-	 <a href="<c:url value="/shop/selectProduct?categoryId=sale&productId=S002"/>">
-	    장난감 <img border="0" src="../images/separator.gif" /></a>
-	 <a href="<c:url value="/shop/selectProduct?categoryId=sale&productId=S003"/>">
-	    옷 <img border="0" src="../images/separator.gif" /></a>
-	 <a href="<c:url value="/shop/selectProduct?categoryId=sale&productId=S004"/>">
-	    신발 <img border="0" src="../images/separator.gif" /></a>
-	 <a href="<c:url value="/shop/selectProduct?categoryId=sale&productId=S005"/>">
-	    모빌</a>
+ <a href="<c:url value="/shop/selectProduct?categoryId=used&productId=S001"/>">
+ 	유모차 <img border="0" src="../images/separator.gif" /></a>
+ <a href="<c:url value="/shop/selectProduct?categoryId=used&productId=S002"/>">
+ 	장난감 <img border="0" src="../images/separator.gif" /></a>
+ <a href="<c:url value="/shop/selectProduct?categoryId=used&productId=S003"/>">
+ 	옷 <img border="0" src="../images/separator.gif" /></a>
+ <a href="<c:url value="/shop/selectProduct?categoryId=used&productId=S004"/>">
+ 	신발 <img border="0" src="../images/separator.gif" /></a>
+ <a href="<c:url value="/shop/selectProduct?categoryId=used&productId=S005"/>">
+ 	모빌</a>
 </center>
 	<div class="container">
 		<div align="right" style="margin:0px 30px 0px 0px">
