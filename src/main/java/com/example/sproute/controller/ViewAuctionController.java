@@ -38,6 +38,7 @@ public class ViewAuctionController {
 		List<Item> items = itemService.selectItemByProduct(categoryId, productId);
 		System.out.println(items);
 		model.addAttribute("items", items);
+		
 		return "AuctionProduct";
 	}
 	

@@ -21,7 +21,8 @@ public class ViewProductController {
 	@Autowired
 	private SaleItemService saleItemService;
 	
-	@RequestMapping("/shop/viewCategory.do") //메인->일반상품가는 것
+	//메인화면 -> "일반"메뉴
+	@RequestMapping("/shop/viewCategory.do")
 	public String handleRequest(@RequestParam(value="categoryId") String categoryId, ModelMap model) throws Exception {
 		List<Item> items = saleItemService.getItemListByCategory(categoryId);
 		model.put("Items", items);

@@ -23,12 +23,13 @@ public class MyPageAuctionController {
 	@Autowired
 	private MyPageAuctionService myService;
 	
-	//경매
+	//유저가 등록한 경매 상품
 	@RequestMapping("/mypage/MyAuctionMain")
 	public String myAuctionPageView(HttpSession session, ModelMap model) throws Exception {
 		System.out.println(session.getAttribute("userId").toString());
 		List<Auction> items = myService.getUserAuctionListByUserId(session.getAttribute("userId").toString());
 		model.addAttribute("Items", items);
+		System.out.println(items);
 		
 		return "MyPageAuction";
 	}

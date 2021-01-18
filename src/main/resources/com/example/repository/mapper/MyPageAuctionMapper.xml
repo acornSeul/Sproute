@@ -26,7 +26,7 @@
   			I.price AS "item.price",
   			I.stock AS "item.stock",
   			I.title AS "item.title",
-  			A.sellerId, A.participant, A.deadline, A.auctionId
+  			A.sellerId, A.participant, A.deadline, A.auctionId, A.status
   	FROM AUCTION A, ITEM I
   	WHERE A.AUCTIONID = I.ITEMID AND A.SELLERID=#{SELLERID}
   </select> 

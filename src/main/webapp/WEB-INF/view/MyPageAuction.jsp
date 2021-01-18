@@ -51,7 +51,13 @@
                   <c:out value="${item.auctionId}"/></a></td>
                <td><c:out value="${item.item.title}"/></td>
                <td><c:out value="${item.item.price}"/></td>
-               <td><a href="<c:url value='/mypage/updateAuctionForm'><c:param name='auctionId' value='${item.auctionId}'/></c:url>"><strong>수정</strong></a>
+               <td>
+               	<c:if test="${item.status eq 'OPEN'}">
+               		<a href="<c:url value='/mypage/updateAuctionForm'><c:param name='auctionId' value='${item.auctionId}'/></c:url>"><strong>수정</strong></a>
+               	</c:if>
+               	<c:if test="${item.status eq 'CLOSE'}">
+               		<strong>수정불가</strong>
+               	</c:if>
                <a href="<c:url value='/mypage/MyAuctionMain/delete'><c:param name='auctionId' value='${item.auctionId}'/></c:url>"><strong>삭제</strong></a></td>
             </tr>
             </c:forEach>
