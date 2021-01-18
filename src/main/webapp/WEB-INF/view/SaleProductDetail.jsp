@@ -61,6 +61,11 @@
         <div class="card mt-2">
           <img class="card-img-top img-fluid" src="http://placehold.it/900x400" alt="">
           <div class="card-body">
+          	<c:if test="${item.stock == 0}">
+				<h6>
+					<span class="badge badge-primary">sold out</span>
+				</h6>
+			</c:if>
             <h3 class="card-title">${item.title}</h3>
             <h4>${item.price} 원</h4>
             <p>수량 : ${item.stock}</p>

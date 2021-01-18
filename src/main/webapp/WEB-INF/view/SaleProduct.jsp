@@ -44,7 +44,9 @@
 		                  <a href="<c:url value='/shop/viewItemDetail.do'><c:param name='itemId' value='${si.itemId}'/></c:url>">${si.title}</a>
 		                </h4>
 		                <h5>${si.price}</h5>
-		                <!-- <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p> -->
+		                <c:if test="${si.stock == 0}">
+							<h6><span class="badge badge-primary">sold out</span></h6>
+						</c:if>
 		              </div>
 		              <div class="card-footer">
 		                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>

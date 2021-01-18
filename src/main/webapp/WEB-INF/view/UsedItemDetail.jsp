@@ -57,11 +57,16 @@
       <!-- /.col-lg-3 -->
 
       <div class="col-lg-9">
-
         <div class="card mt-2">
           <img class="card-img-top img-fluid" src="http://placehold.it/900x400" alt="">
           <div class="card-body">
-            <h3 class="card-title">${item.title}</h3>
+          	<c:if test="${item.stock == 0}">
+				<h6>
+					<span class="badge badge-primary">sold out</span>
+				</h6>
+			</c:if>
+            <h3 class="card-title">${item.title}
+			</h3>
             <h4>${item.price} 원</h4>
             <p>판매자 : ${used.sellerId}</p>
             <p>사용기간 : ${used.usingTime}</p>
@@ -69,7 +74,6 @@
             <p class="card-text">${item.description}</p>
             <br/>
            	<span style="font-size:15px; color:lightgray">게시일 : ${item.addDate}</span><br/><br/>
-           	
            	
             <a href='<c:url value="/shop/addItemToCart">
 	          <c:param name="workingItemId" value="${item.itemId}"/><c:param name="categoryId" value="${item.categoryId}"/>

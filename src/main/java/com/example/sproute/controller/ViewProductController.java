@@ -26,6 +26,7 @@ public class ViewProductController {
 	public String handleRequest(@RequestParam(value="categoryId") String categoryId, ModelMap model) throws Exception {
 		List<Item> items = saleItemService.getItemListByCategory(categoryId);
 		model.put("Items", items);
+		System.out.println(items);
 		
 		return "SaleProduct";
 	}
@@ -39,6 +40,7 @@ public class ViewProductController {
 		
 		model.put("Items", items);
 		
+		//중고상품목록
 		if(categoryId.equals("used")) {
 			return "UsedProduct";
 		}
