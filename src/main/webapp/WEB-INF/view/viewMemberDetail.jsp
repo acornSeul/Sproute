@@ -18,10 +18,10 @@
   <!-- Custom styles for this template -->
   <link href="../resource/css/shop-homepage.css" rel="stylesheet">
   <style>
-a { color:black; text-decoration:none; }
-li { list-style:none; margin-left:-1px; z-index:1; }
-ul { display:inline-block; *display:inline; zoom:1;  margin-left: auto; margin-right: auto;}
-h3 { text-align:center;}
+	a { color:black; text-decoration:none; }
+	li { list-style:none; margin-left:-1px; z-index:1; }
+	ul { display:inline-block; *display:inline; zoom:1;  margin-left: auto; margin-right: auto;}
+	h3 { text-align:center;}
 </style>
 </head>
 <body>
@@ -54,7 +54,7 @@ h3 { text-align:center;}
 			<div class="form-group row">
 				  <label for="address" class="col-sm-2 col-form-label col-form-label-sm">주소 </label>
 			         <div class="col-sm-3">
-			         	<input type="text" readonly class="form-control-plaintext" id="address" value="${detailReq.address}"/>
+			         	<input type="text" readonly class="form-control-plaintext" value="${detailReq.address}"/>
 					</div>
 			</div>
 			<div class="form-group row">

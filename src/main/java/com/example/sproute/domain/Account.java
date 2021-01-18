@@ -9,25 +9,50 @@ public class Account {
 	private String email;
 	private String name;
 	private String address;
+	private String zipCode;
+	private String detailAddress;
 	private String phone;
 	private String sex;
 	private String birth;
+	private String totalAddress;
 	
+	public String getTotalAddress() {
+		return (address + detailAddress);
+	}
+
 	public Account() {
 	}
 
+	public String getZipCode() {
+		return zipCode;
+	}
+
+	public void setZipCode(String zipCode) {
+		this.zipCode = zipCode;
+	}
+
 	public Account(String userId, String password, String email, String name, String address, String phone, String sex,
-			String birth) {
+			String birth, String zipCode, String detailAddress) {
 		this.userId = userId;
 		this.password = password;
 		this.email = email;
 		this.name = name;
+		this.zipCode = zipCode;
 		this.address = address;
 		this.phone = phone;
 		this.sex = sex;
 		this.birth = birth;
+		this.detailAddress = detailAddress;
 	}
 	
+	public String getDetailAddress() {
+		return detailAddress;
+	}
+
+	public void setDetailAddress(String detailAddress) {
+		this.detailAddress = detailAddress;
+	}
+
 	public int getId() {
 		return id;
 	}

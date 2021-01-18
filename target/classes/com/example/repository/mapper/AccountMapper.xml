@@ -11,8 +11,8 @@
    <selectKey keyProperty="id" resultType="int" order="BEFORE">
       SELECT seq_userid.nextval AS id FROM DUAL
    </selectKey>
-   INSERT INTO ACCOUNT(id, userId, password, email, address, phone, sex, name, birth )
-      VALUES(#{id}, #{userId}, #{password}, #{email}, #{address}, #{phone}, #{sex}, #{name},
+   INSERT INTO ACCOUNT(id, userId, password, email, address, zipCode, detailAddress, phone, sex, name, birth )
+      VALUES(#{id}, #{userId}, #{password}, #{email}, #{address}, #{zipCode}, #{detailAddress}, #{phone}, #{sex}, #{name},
          TO_DATE(#{birth}, 'YYYY-MM-DD'))
    </insert>
 
@@ -25,7 +25,7 @@
 <!-- 특정 아이디 회원 정보 -->
    <select id="selectMemberListbyUserId"
       resultType="com.example.sproute.domain.Account" >
-      SELECT USERID, PASSWORD, EMAIL, ADDRESS, PHONE, SEX, NAME, TO_CHAR(BIRTH, 'YYYY-MM-DD')AS BIRTH
+      SELECT USERID, PASSWORD, EMAIL, ADDRESS, PHONE, SEX, NAME, TO_CHAR(BIRTH, 'YYYY-MM-DD')AS BIRTH, DETAILADDRESS, ZIPCODE
       FROM ACCOUNT
       WHERE USERID = #{userId}
    </select>
@@ -37,9 +37,10 @@
          NAME = #{name},
          EMAIL = #{email},
          ADDRESS = #{address},
+         DETAILADDRESS = #{detailAddress},
+         ZIPCODE = #{zipCode},
          PHONE = #{phone},
-         BIRTH= #{birth},
-         SEX = #{sex}
+         BIRTH= #{birth}
       WHERE USERID = #{userId}
    </update>
 

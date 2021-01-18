@@ -20,9 +20,12 @@ public class AccountCommand {
    @NotBlank
    private String address;
    @NotBlank
+   private String zipCode;
+   @NotBlank
+   private String detailAddress;
+   @NotBlank
    @Pattern(regexp="^01\\d{1}-\\d{3,4}-\\d{4}$")
    private String phone;
-   @NotBlank
    private String sex;
    @NotBlank
    private String name;
@@ -33,7 +36,7 @@ public class AccountCommand {
       
    }
    public AccountCommand(int id, String userId, String password, String email, String address, String phone,
-         String sex, String name, String birth) {
+         String sex, String name, String birth, String zipCode, String detailAddress) {
       this.id = id;
       this.userId = userId;
       this.password = password;
@@ -43,9 +46,23 @@ public class AccountCommand {
       this.sex = sex;
       this.name = name;
       this.birth = birth;
+      this.zipCode = zipCode;
+      this.detailAddress = detailAddress;
    }
-   public int getId() {
-      return id;
+   public String getDetailAddress() {
+	return detailAddress;
+}
+public void setDetailAddress(String detailAddress) {
+	this.detailAddress = detailAddress;
+}
+public String getZipCode() {
+	return zipCode;
+	}
+	public void setZipCode(String zipCode) {
+		this.zipCode = zipCode;
+	}
+	public int getId() {
+	      return id;
    }
    public void setId(int id) {
       this.id = id;

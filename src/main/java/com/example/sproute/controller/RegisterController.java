@@ -56,9 +56,10 @@ public class RegisterController {
 	      }
 	      if(ac == null) {
 	         Account account = new Account(req.getUserId(), req.getPassword(), req.getEmail(), req.getName(), 
-	               req.getAddress(), req.getPhone(), req.getSex(), req.getBirth());
+	               req.getAddress(), req.getPhone(), req.getSex(), req.getBirth(), req.getZipCode(), req.getDetailAddress());
 	         int result1 = as.insertMember(account);
 	         System.out.println("Insert Result : " + result1);
+	         System.out.println(">>>>>>>>>>>>>Not Insert : " + account.getDetailAddress() + ", " + account.getZipCode());
 	         return "redirect:/";
 	      }
 	      return "/";

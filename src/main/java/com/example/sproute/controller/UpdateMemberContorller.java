@@ -37,7 +37,8 @@ public class UpdateMemberContorller {
 			ac.setAddress(account.getAddress());
 			ac.setPhone(account.getPhone());
 			ac.setBirth(account.getBirth());
-			ac.setSex(account.getSex());
+			ac.setZipCode(account.getZipCode());
+			ac.setDetailAddress(account.getDetailAddress());
 		
 			return ac;
 		}
@@ -66,7 +67,7 @@ public class UpdateMemberContorller {
 		         return "modifyMember";
 		      }
 			Account account = new Account(userId, req.getPassword(), req.getEmail(), req.getName(),
-					req.getAddress(), req.getPhone(), req.getSex(), req.getBirth());
+					req.getAddress(), req.getPhone(), req.getSex(), req.getBirth(), req.getZipCode(), req.getDetailAddress());
 			
 			System.out.println(account.getPassword());
 			

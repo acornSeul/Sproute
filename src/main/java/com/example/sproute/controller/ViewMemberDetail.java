@@ -30,9 +30,9 @@ public class ViewMemberDetail {
 		Account accont = as.selectMemberListByUserId(userId);
 		
 		ac = new AccountCommand(accont.getId(), accont.getUserId(), accont.getPassword(), accont.getEmail(),
-				accont.getAddress(), accont.getPhone(), accont.getSex(), accont.getName(), accont.getBirth());
-	
-		
+				accont.getTotalAddress(), accont.getPhone(), accont.getSex(), accont.getName(), accont.getBirth(), accont.getZipCode(), accont.getDetailAddress());
+
+		System.out.println(">>>>>ac.totalAddress>>>> : " + ac.getAddress());
 		model.addAttribute("detailReq", ac);
 		
 		return "viewMemberDetail";
