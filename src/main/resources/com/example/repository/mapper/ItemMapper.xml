@@ -104,20 +104,20 @@
   	WHERE ITEMID = USEDID AND SELLERID = #{sellerId} AND CATEGORYID = 'used'
   </select>
   
-  <!-- auction용 -->
+  <!-- auction -->
   <select id="selectItemByProduct" parameterType="String" resultType="Item">
 	SELECT
-      ITEMID,
-      CATEGORYID,
-      PRICE,
-      STOCK,
-      TITLE,
-      DESCRIPTION,
-      ADDDATE,
-      PRODUCTID,
-      IMGNAME
-    FROM ITEM
-    WHERE CATEGORYID = #{param1} AND PRODUCTID = #{param2}
+      I.ITEMID,
+      I.CATEGORYID,
+      I.PRICE,
+      I.STOCK,
+      I.TITLE,
+      I.DESCRIPTION,
+      I.ADDDATE,
+      I.PRODUCTID,
+      I.IMGNAME
+    from ITEM I, AUCTION A
+    WHERE I.ITEMID = A.AUCTIONID AND I.CATEGORYID = #{param1} AND I.PRODUCTID = #{param2} AND A.STATUS = 'OPEN'
   </select>
   
   <delete id="deleteUsedItem" parameterType="String">
