@@ -73,14 +73,16 @@
             <p>수량 : ${item.stock}</p>
             <p class="card-text">${item.description}</p>
             <br/>
-           	<span style="font-size:15px; color:lightgray">게시일 : ${item.addDate}</span><br/><br/>
+           	<span style="font-size:15px; color:lightgray">게시일 : ${item.addDate}</span>&emsp;&emsp;&emsp;
            	
-            <a href='<c:url value="/shop/addItemToCart">
-	          <c:param name="workingItemId" value="${item.itemId}"/><c:param name="categoryId" value="${item.categoryId}"/>
-	          </c:url>' class="btn btn-info">장바구니</a>
-	          <!-- 구매하기 고쳐야 할 부분
-				<a href='<c:url value="/shop/newOrder.do"/>' class="btn btn-info">구매하기</a>
-			  -->
+           	<c:if test="${item.stock != 0}">
+	            <a href='<c:url value="/shop/addItemToCart">
+		          <c:param name="workingItemId" value="${item.itemId}"/><c:param name="categoryId" value="${item.categoryId}"/>
+		          </c:url>' class="btn btn-info">장바구니</a>
+		          <!-- 구매하기 고쳐야 할 부분
+					<a href='<c:url value="/shop/newOrder.do"/>' class="btn btn-info">구매하기</a>
+				  -->
+			 </c:if>
           </div>
         </div>
         <!-- /.card -->
