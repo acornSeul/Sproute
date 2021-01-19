@@ -13,19 +13,20 @@ public class AuctionCommand {
 	private Item item;
 	private String sellerId;
 	private int participant;
-	@Pattern(regexp="(19|20)\\d{2}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[0-1])\\s([1-9]|[01][0-9]|2[0-3]):([0-5][0-9])")
+	//@Pattern(regexp="(19|20)\\d{2}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[0-1])\\s([1-9]|[01][0-9]|2[0-3]):([0-5][0-9])")
 	private String deadline;
+	private String inputTime;
 	private String auctionId;
 	private MultipartFile report;
 	private String status;
-	//private Auction auction;
-	
-//	public Auction getAuction() {
-//		return auction;
-//	}
-//	public void setAuction(Auction auction) {
-//		this.auction = auction;
-//	}
+	private Auction auction;
+
+	public Auction getAuction() {
+		return auction;
+	}
+	public void setAuction(Auction auction) {
+		this.auction = auction;
+	}
 	public Item getItem() {
 		return item;
 	}
@@ -68,5 +69,19 @@ public class AuctionCommand {
 	public void setStatus(String status) {
 		this.status = status;
 	}
+	public String getInputTime() {
+		return inputTime;
+	}
+	public void setInputTime(String inputTime) {
+		this.inputTime = inputTime;
+	}
+	@Override
+	public String toString() {
+		return "AuctionCommand [item=" + item + ", sellerId=" + sellerId + ", participant=" + participant
+				+ ", deadline=" + deadline + ", inputTime=" + inputTime + ", auctionId=" + auctionId + ", report="
+				+ report + ", status=" + status + "]";
+	}
+	
 
 }
+

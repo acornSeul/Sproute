@@ -73,8 +73,7 @@ public class AddAuctionItemController implements ApplicationContextAware {
 	}
 
 	@RequestMapping(value ="/shop/addAuctionItem", method = RequestMethod.POST)      //요청 URL
-	   public String auctionForm(@Valid @ModelAttribute("auction") AuctionCommand auction, 
-	         BindingResult result, Model model, SessionStatus status, HttpSession session) throws ParseException {
+	   public String auctionForm(@Valid @ModelAttribute("auction") AuctionCommand auction, BindingResult result, Model model, SessionStatus status, HttpSession session) throws ParseException {
 			
 			if(auction.getItem().getStock() > 1) {
 				result.rejectValue("item.stock", "morethan1", "1개이상 입력하실 수 없습니다.");
@@ -95,8 +94,9 @@ public class AddAuctionItemController implements ApplicationContextAware {
 		      SimpleDateFormat today = new SimpleDateFormat("y/M/d");
 		      auction.getItem().setAddDate(today.format(new Date()));
 		      
+		      String bidDeadline = auction.getDeadline() + " " + auction.getInputTime();
 		      
-		      Auction inputAuction = new Auction(auction.getItem(), userId, 0, auction.getDeadline(), auction.getAuctionId(), "OPEN");
+		      Auction inputAuction = new Auction(auction.getItem(), userId, 0, bidDeadline, auction.getAuctionId(), "OPEN");
 		     
 		      String product = null;
 		      switch(auction.getItem().getProductId()) {
@@ -125,11 +125,12 @@ public class AddAuctionItemController implements ApplicationContextAware {
 		      System.out.println(result2);
 		      List<Item> items = itemService.selectAllAuction("Auction");
 		      
-		      String str_Deadline = auction.getDeadline();
+		      String str_Deadline = bidDeadline;
 		         
 		        DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 		        Date date_Deadline = df.parse(str_Deadline); /// Date타입으로 변경
-		      
+		        
+		        System.out.println("date_deadline값은 " + date_Deadline);
 		        auctionService.testScheduler(date_Deadline);
 		      
 		      model.addAttribute("items", items);

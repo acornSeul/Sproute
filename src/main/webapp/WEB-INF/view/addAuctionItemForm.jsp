@@ -9,15 +9,27 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
    <!-- Bootstrap core JavaScript -->
   <script src="../resource/vendor/jquery/jquery.min.js"></script>
   <script src="../resource/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <title>Sproute - AddAuctionItem</title>
   <!-- Bootstrap core CSS -->
   <link href="../resource/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+  
   <!-- Custom styles for this template -->
   <link href="../resource/css/shop-homepage.css" rel="stylesheet">
+  <link href="../resource/css/styles.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
+  <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script> <!-- 이거 -->
+  
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="js/scripts.js"></script>
+  
+  <!-- 시간 -->
+  	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+
 	<style>
 		table, h3 {
 		    border-collapse: collapse;
@@ -26,6 +38,27 @@
 		    align:center;
 		}
 	</style>
+  
+  	<script>
+  $( function() {
+     $( "#datepicker" ).datepicker( {
+    	altFormat: "yyyy-mm-dd",
+    	dateFormat: 'yy-mm-dd', //Input Display Format
+    	minDate: "-0D",
+    	dayNamesMin: ['월', '화', '수', '목', '금', '토', '일'], // 요일의 한글 형식.
+    	
+    }); 
+  } );
+
+  $(document).ready(function(){
+	    $('#timepicker').timepicker({ 
+		    timeFormat: 'HH:mm',
+		    interval: 5,
+		    minTime: '10:00',
+		    maxTime: '22:00', 
+		});
+	});
+  </script>
 </head>
 <body>
 <%@ include file="IncludeTop.jsp" %>
@@ -50,13 +83,19 @@
 		    		<form:errors path="item.title"/>
 				 </div>
 			</div>
-    		<div class="form-group row">
-				 <label for="deadline" class="col-sm-2 col-form-label col-form-label-sm">입찰 기한 </label>
-				 <div class="col-sm-3">
-					<form:input path="deadline" class="form-control"/>
-             		<form:errors path="deadline"/>
-				 </div>
-			</div>			
+				<div class="form-group row">
+					<label for="deadline" class="col-sm-2 col-form-label col-form-label-sm">입찰 기한 </label>
+					<div class="col-sm-3">
+								<form:input path="deadline" class="form-control" id="datepicker" readonly="true"/>
+								<form:errors path="deadline"/>
+							</div>
+						<div class="col-md-6">
+								<div class="form-group">
+									<form:input path="inputTime" name="timepicker" id="timepicker" readonly="true"/>
+								</div>
+						</div>
+				</div>
+		
     		<div class="form-group row">
 				 <label for="item.price" class="col-sm-2 col-form-label col-form-label-sm">상품 하한가</label>
 				 <div class="col-sm-3">
@@ -103,12 +142,11 @@
     </div>
     <!-- /.container -->
   </footer>
+  
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<!-- timepicker -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+
 </body>
 </html>
-
-
-
-
-
-
-

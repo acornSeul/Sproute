@@ -17,9 +17,25 @@
   <title>Sproute - Hompage</title>
   <!-- Bootstrap core CSS -->
   <link href="../resource/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <!-- Custom styles for this template -->
   <link href="../resource/css/shop-homepage.css" rel="stylesheet">
+  <script>
+  			$( function() {
+     		$( "#datepicker" ).datepicker( {
+	    	altFormat: "yyyymmdd",
+	    	dateFormat: 'yymmdd', //Input Display Format
+	    	maxDate: "+0D",
+	    	minDate: '-100y',
+	    	showMonthAfterYear: true,
+	    	changeMonth: true, // 월을 바꿀수 있는 셀렉트 박스를 표시한다.
+	    	changeYear: true, // 년을 바꿀 수 있는 셀렉트 박스를 표시한다.
+	    	dayNamesMin: ['월', '화', '수', '목', '금', '토', '일'], // 요일의 한글 형식.
+	    	yearRange: "c-80:c+1"
+		    }); 
+		  } );
+  		</script>
   <style>
 		a { color:black; text-decoration:none; }
 		li { list-style:none; margin-left:-1px; z-index:1; }
@@ -116,7 +132,7 @@
 	 		<div class="form-group row">
 				 <label for="birth" class="col-sm-2 col-form-label col-form-label-sm">생년월일</label>
 				 <div class="col-sm-3">
-				 	 <form:input class="form-control" path="birth" value="${modifyReq.birth}"/> 
+				 	 <form:input path="birth" class="form-control" value="${modifyReq.birth}" id="datepicker" placeholder="생년월일을 입력해주세요." readonly="true"/>
 			         <form:errors path="birth"/>
 				 </div>
 			</div>  
@@ -201,6 +217,9 @@
 			    }).open();
 			}
 		</script>
+		<!-- DatePicker -->
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </body>
 
 

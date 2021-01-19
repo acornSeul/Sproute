@@ -46,7 +46,9 @@ public class AddItemToCartController {
 				cart.addItem(item, isInStock);
 			}
 		}
-		return new ModelAndView("cart", "cart", cart); 
+		
+		
+		return new ModelAndView("redirect:/shop/viewCart", "cart", cart); 
 	}
 
 }
