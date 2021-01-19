@@ -71,8 +71,10 @@
             <p>수량 : ${item.stock}</p>
             <p class="card-text">${item.description}</p>
             <br/>
-            <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
-            4.0 stars &emsp;&emsp;&emsp;
+            <span class="text-warning">&#9733;</span>
+            ${rating.avg}점 &emsp;&emsp;&emsp;
+            
+            <!-- &#9733; &#9733; &#9733; &#9734;  -->
             
             <c:if test="${item.stock != 0}">
 	            <a href='<c:url value="/shop/addItemToCart">
@@ -93,14 +95,11 @@
            	 상품 후기
           </div>
           <div class="card-body">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-            <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-            <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-            <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-            <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-            <small class="text-muted">Posted by Anonymous on 3/1/17</small>
+          <c:forEach var="re" items="${review}">
+	            <p>${re.content}&emsp;<span class="text-warning">&#9733;</span>${re.rating}</p>
+	            <small class="text-muted">작성자 : ${re.userId}&emsp;게시일 :  ${re.regDate}</small>
+	            <hr>
+            </c:forEach>
             <hr>
              <a href="<c:url value='/shop/reviewForm?itemId=${item.itemId}'/>" class="btn btn-success">리뷰 등록</a>
           </div>

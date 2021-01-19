@@ -37,4 +37,9 @@ public class ReviewSessionRepository {
 	/*public int updateReview(Review review) {
 		return sqlSession.update(namespace + ".updateReview", review);
 	}*/
+	
+	//리뷰 점수 평균
+	public Review averageRating(String itemId) {
+		return sqlSession.selectOne(namespace + ".averageRating", itemId);
+	}
 }

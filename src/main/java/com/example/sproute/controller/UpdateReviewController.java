@@ -29,7 +29,7 @@ public class UpdateReviewController {
 			
 			Review review = rs.selectReviewByReviewId(reviewId);
 			ReviewCommand rc = new ReviewCommand(reviewId, session.getAttribute("userId").toString(),
-					review.getRating(), review.getContent(), review.getTitle(), review.getItemId());
+					review.getRating(), review.getContent(), review.getTitle(), review.getItemId(), review.getRegDate());
 			return rc;
 		}
 			return new ReviewCommand();
@@ -54,7 +54,7 @@ public class UpdateReviewController {
 		String itemId = request.getParameter("itemId");
 		
 		Review review = new Review(reviewId, req.getUserId(), req.getTitle(),
-				req.getRating(), req.getContent(), itemId);
+				req.getRating(), req.getContent(), itemId, req.getRegDate());
 		
 		System.out.println("ReviewId test : " + reviewId);
 		int result = rs.updateReview(review);

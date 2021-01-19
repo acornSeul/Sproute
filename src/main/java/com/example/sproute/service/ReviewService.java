@@ -42,5 +42,9 @@ public class ReviewService {
 	public int updateReview(Review review) {
 		return rm.updateReview(review);
 	}
+	//리뷰 평균
+	public Review averageRating(String itemId) {
+		return rs.averageRating(itemId);
+	}
 	
 }

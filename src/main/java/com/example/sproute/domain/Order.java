@@ -10,7 +10,7 @@ import com.example.sproute.controller.OrderForm;
 public class Order {
    String orderId;
    String userId;
-   Date orderDate;
+   String orderDate;
    @NotBlank
    String shipAddress;
    @NotBlank
@@ -38,10 +38,10 @@ public class Order {
    public void setUserId(String userId) {
       this.userId = userId;
    }
-   public Date getOrderDate() {
+   public String getOrderDate() {
       return orderDate;
    }
-   public void setOrderDate(Date orderDate) {
+   public void setOrderDate(String orderDate) {
       this.orderDate = orderDate;
    }
    public String getShipAddress() {
@@ -94,7 +94,7 @@ public class Order {
    }
    public void initOrder(Account account) {
 	   userName = account.getName();
-      orderDate = new Date();
+      orderDate = new String();
       userId = account.getUserId();
       
       shipAddress = "";

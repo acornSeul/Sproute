@@ -9,8 +9,8 @@
 	<selectKey keyProperty="reviewId" resultType="int" order="BEFORE">
 		SELECT seq_review.nextval AS reviewId FROM DUAL
 	</selectKey>
-		INSERT INTO REVIEW (reviewId, userId, rating, content, title, itemId)
-			VALUES(#{reviewId}, #{userId}, #{rating}, #{content}, #{title}, #{itemId})
+		INSERT INTO REVIEW (reviewId, userId, rating, content, title, itemId, regDate)
+			VALUES(#{reviewId}, #{userId}, #{rating}, #{content}, #{title}, #{itemId}, TO_CHAR(SYSDATE,'YYYY-MM-DD'))
 	</insert>
 	
 <!-- 특정 회원이 작성한 리뷰 조회 -->
@@ -22,7 +22,7 @@
 	
 <!-- 아이템별 리뷰 조회 -->
 	<select id="selectReviewByItemId" resultType="com.example.sproute.domain.Review">
-		SELECT TITLE, RATING, ITEMID, CONTENT, USERID
+		SELECT TITLE, RATING, ITEMID, CONTENT, USERID, TO_CHAR(REGDATE, 'YYYY-MM-DD') AS REGDATE
 		FROM REVIEW
 		WHERE ITEMID = #{itemId}
 	</select>
@@ -45,8 +45,16 @@
 		UPDATE REVIEW SET 
 			TITLE = #{title},
 			RATING = #{rating},
-			CONTENT = #{content}
+			CONTENT = #{content},
+			REGDATE = TO_CHAR(SYSDATE, 'YYYY-MM-DD')
 		WHERE REVIEWID = #{reviewId}
 	</update>
+
+<!-- 리뷰 점수 평균 -->
+	<select id="averageRating" resultType="com.example.sproute.domain.Review">
+		SELECT AVG(RATING) AS AVG
+		FROM REVIEW
+		WHERE ITEMID = #{itemId}
+	</select>
 	
 </mapper>

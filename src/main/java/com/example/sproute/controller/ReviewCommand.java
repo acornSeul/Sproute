@@ -1,5 +1,7 @@
 package com.example.sproute.controller;
 
+import java.util.Date;
+
 public class ReviewCommand {
 	private int reviewId;
 	private String userId;
@@ -7,19 +9,29 @@ public class ReviewCommand {
 	private String content;
 	private String title;
 	private String itemId;
+	private String regDate;
 	
 	public ReviewCommand() {
 		
 	}
 	
-	public ReviewCommand(int reviewId, String userId, double rating, String content, String title, String itemId) {
+	public ReviewCommand(int reviewId, String userId, double rating, String content, String title, String itemId, String regDate) {
 		this.reviewId = reviewId;
 		this.userId = userId;
 		this.rating = rating;
 		this.content = content;
 		this.title = title;
 		this.itemId = itemId;
+		this.regDate = regDate;
 	}
+	public String getRegDate() {
+		return regDate;
+	}
+
+	public void setRegDate(String regDate) {
+		this.regDate = regDate;
+	}
+
 	public int getReviewId() {
 		return reviewId;
 	}

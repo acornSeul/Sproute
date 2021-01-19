@@ -43,12 +43,10 @@ public class ReviewContorller {
 	public ReviewCommand formData(HttpServletRequest request) {
 			if(request.getMethod().equalsIgnoreCase("GET")) {
 				ReviewCommand review = new ReviewCommand();
-				System.out.println("폼데이터 : " + request.getParameter("itemId"));
 				review.setItemId(request.getParameter("itemId"));
 				return review;
 			} else
 				return new ReviewCommand();
-	
 	}
 	
 	//리뷰 폼 불러오기 (리뷰작성 클릭 시)

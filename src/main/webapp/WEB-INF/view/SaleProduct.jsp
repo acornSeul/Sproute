@@ -48,9 +48,6 @@
 							<h6><span class="badge badge-primary">sold out</span></h6>
 						</c:if>
 		              </div>
-		              <div class="card-footer">
-		                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-		              </div>
 		            </div>
 		          </div>
 		          </c:forEach>

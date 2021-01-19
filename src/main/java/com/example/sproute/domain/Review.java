@@ -1,5 +1,7 @@
 package com.example.sproute.domain;
 
+import java.util.Date;
+
 public class Review {
 	private int reviewId;
 	private String userId;
@@ -7,13 +9,14 @@ public class Review {
 	private double rating;
 	private String content;
 	private String itemId;
+	private String regDate;
+	private double avg;
 	
 	public Review() {
 		
 	}
 	
-	
-	public Review(int reviewId, String userId, String title, double rating, String content, String itemId) {
+	public Review(int reviewId, String userId, String title, double rating, String content, String itemId, String regDate) {
 		super();
 		this.reviewId = reviewId;
 		this.userId = userId;
@@ -21,8 +24,29 @@ public class Review {
 		this.rating = rating;
 		this.content = content;
 		this.itemId = itemId;
+		this.regDate = regDate;
 	}
 	
+	public double getAvg() {
+		return avg;
+	}
+
+
+	public void setAvg(double avg) {
+		this.avg = avg;
+	}
+
+
+	public String getRegDate() {
+		return regDate;
+	}
+
+
+	public void setRegDate(String regDate) {
+		this.regDate = regDate;
+	}
+
+
 	public Review(String userId, String title, double rating, String content, String itemId) {
 		this.userId = userId;
 		this.title = title;

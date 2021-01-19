@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.sproute.domain.Item;
 import com.example.sproute.domain.Product;
+import com.example.sproute.domain.Review;
+import com.example.sproute.service.ReviewService;
 import com.example.sproute.service.SaleItemService;
 
 //일반상품 누르면 일반상품아이템 전체 출력되는 컨트롤러
@@ -20,6 +22,8 @@ public class ViewProductController {
 	
 	@Autowired
 	private SaleItemService saleItemService;
+	@Autowired
+	private ReviewService reviewService;
 	
 	//메인화면 -> "일반"메뉴
 	@RequestMapping("/shop/viewCategory.do")
@@ -32,7 +36,8 @@ public class ViewProductController {
 	}
 	
 	@RequestMapping("/shop/selectProduct")
-	public String selectProductView(@RequestParam(value="categoryId") String categoryId, @RequestParam(value="productId") String productId, ModelMap model) throws Exception {
+	public String selectProductView(@RequestParam(value="categoryId") String categoryId, 
+			@RequestParam(value="productId") String productId, ModelMap model) throws Exception {
 		Product product = new Product();
 		product.setCateogryId(categoryId);
 		product.setProductId(productId);
@@ -47,7 +52,8 @@ public class ViewProductController {
 		return "SaleProduct";
 	}
 
-	@RequestMapping("/shop/viewItemDetail.do") //상품(itemid)상세보기
+	//상품(itemid)상세보기
+	@RequestMapping("/shop/viewItemDetail.do") 
 	public String handleRequest2(String itemId, ModelMap model) throws Exception {
 		Item item = saleItemService.getItem(itemId);
 		if (item == null) {
@@ -56,6 +62,15 @@ public class ViewProductController {
 		} else {
 			model.addAttribute("item", item);
 		}
+		
+		List<Review> review = reviewService.viewItemReview(itemId);
+		Review rating = reviewService.averageRating(itemId);
+		
+		model.put("review", review);
+		model.addAttribute("rating", rating);
+		
+		System.out.println(">>>>review>>>>>>" + review.get(0).getRegDate());
+		
 		return "SaleProductDetail";
 	}
 }

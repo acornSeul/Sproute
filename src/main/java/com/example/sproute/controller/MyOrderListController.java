@@ -42,7 +42,11 @@ public class MyOrderListController {
 			} else {
 				itemMap.put(item.getItemId(), item);
 			}
+			
+			System.out.println(">>>>>order info>>>>>>" + orders.get(i).toString());
 		}
+		
+		
 		
 		model.addAttribute("items", itemMap);
  		model.addAttribute("orders", orders);

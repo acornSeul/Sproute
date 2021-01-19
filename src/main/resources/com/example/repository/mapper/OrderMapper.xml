@@ -14,7 +14,7 @@
 	<select id = "selectOrderByUserId" parameterType="String" resultType="Order">
 		SELECT 
 			ORDERID, 
-			ORDERDATE, 
+			TO_CHAR(ORDERDATE, 'YYYY-MM-DD HH:MM:DD') AS ORDERDATE, 
 			SHIPADDRESS, 
 			ADDRESS, 
 			TOTALPRICE, 
