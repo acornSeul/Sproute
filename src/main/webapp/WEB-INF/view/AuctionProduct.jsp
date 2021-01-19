@@ -41,7 +41,7 @@
 			  <c:forEach var="item" items="${items}">
 		          <div class="col-lg-4 col-md-5 mb-4">
 		            <div class="card h-100">
-		              <a href="<c:url value="/shop/auctionItemDetail"><c:param name='itemId' value='${item.itemId}'/></c:url>"><img class="card-img-top" src="http://placehold.it/700x400" alt="<c:url value='/upload/${item.imgName}' />"></a>
+		              <a href="<c:url value="/shop/auctionItemDetail"><c:param name='itemId' value='${item.itemId}'/></c:url>"><img class="card-img-top" src="<c:url value='/upload/${item.imgName}' />" alt="${item.title}"></a>
 		              <div class="card-body">
 		                <h4 class="card-title">
 		                  <a href="<c:url value="/shop/auctionItemDetail"><c:param name='itemId' value='${item.itemId}'/></c:url>">${item.title}</a>
