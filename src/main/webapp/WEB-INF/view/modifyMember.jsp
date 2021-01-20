@@ -36,12 +36,6 @@
 		    }); 
 		  } );
   		</script>
-  <style>
-		a { color:black; text-decoration:none; }
-		li { list-style:none; margin-left:-1px; z-index:1; }
-		ul { display:inline-block; *display:inline; zoom:1;  margin-left: auto; margin-right: auto;}
-		h3 { text-align:center;}
-  </style>
 </head>
 <body>
 <%@ include file="IncludeTop.jsp" %>
