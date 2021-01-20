@@ -29,7 +29,7 @@ public class AccountCommand {
    private String sex;
    @NotBlank
    private String name;
-   @Pattern(regexp="^(19|20)\\d{2}(0[1-9]|1[012])(0[1-9]|[12][0-9]|3[0-1])$")
+   @Pattern(regexp="^(19|20)\\d{2}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[0-1])$")
    private String birth;
    
    public AccountCommand() {
