@@ -11,6 +11,7 @@ public class Review {
 	private String itemId;
 	private String regDate;
 	private double avg;
+	private int cnt;
 	
 	public Review() {
 		
@@ -26,6 +27,15 @@ public class Review {
 		this.itemId = itemId;
 		this.regDate = regDate;
 	}
+	
+	public int getCnt() {
+		return cnt;
+	}
+
+	public void setCnt(int cnt) {
+		this.cnt = cnt;
+	}
+
 	
 	public double getAvg() {
 		return avg;

@@ -30,15 +30,6 @@ public class ReviewContorller {
 	@Autowired
 	private ReviewService rs;
 	
-//	@ModelAttribute("reviewReq")
-//	public ReviewCommand formData(HttpServletRequest request) {
-//			ReviewCommand rc = new ReviewCommand();
-//			rc.setItemId(request.getParameter("itemId"));
-//			System.out.println("안녕" + rc.toString());
-//			return rc;
-//	
-//	}
-	
 	@ModelAttribute("reviewReq")
 	public ReviewCommand formData(HttpServletRequest request) {
 			if(request.getMethod().equalsIgnoreCase("GET")) {
@@ -59,10 +50,9 @@ public class ReviewContorller {
 	public String reveiw(@ModelAttribute("reviewReq") ReviewCommand req, HttpServletRequest request, HttpSession session, RedirectAttributes redirect, Errors result) {
 		req.setUserId(session.getAttribute("userId").toString());
 
-		
-			ValidationUtils.rejectIfEmptyOrWhitespace(result, "title", "noInputTitle");
-			ValidationUtils.rejectIfEmptyOrWhitespace(result, "rating", "noInputRating");
-			ValidationUtils.rejectIfEmptyOrWhitespace(result, "content", "noInputcontent");
+		ValidationUtils.rejectIfEmptyOrWhitespace(result, "title", "noInputTitle");
+		ValidationUtils.rejectIfEmptyOrWhitespace(result, "rating", "noInputRating");
+		ValidationUtils.rejectIfEmptyOrWhitespace(result, "content", "noInputcontent");
 		
 		if(result.hasErrors()) {
 			return "reviewForm";

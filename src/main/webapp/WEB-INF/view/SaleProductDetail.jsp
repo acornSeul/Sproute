@@ -72,7 +72,7 @@
             <p class="card-text">${item.description}</p>
             <br/>
             <span class="text-warning">&#9733;</span>
-            ${rating.avg}점 &emsp;&emsp;&emsp;
+            ${rating.avg}점 (${rating.cnt }) &emsp;&emsp;&emsp;
             
             <!-- &#9733; &#9733; &#9733; &#9734;  -->
             

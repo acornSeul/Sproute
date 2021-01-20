@@ -100,8 +100,8 @@ public class Order {
       shipAddress = "";
       address = account.getAddress();
       
-      cardNumber = "";
-      expireDate = "";
+      cardNumber = "999 9999 9999 9999";
+      expireDate = "21/01";
        cardType = "Visa";
    }
    @Override
