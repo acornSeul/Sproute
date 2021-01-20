@@ -33,9 +33,7 @@
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
 		<%@ include file="IncludeTop.jsp" %>
 	</nav>
-	<%--  <%@ include file="IncludeQuickHeader.jsp" %> --%>
 	<br/>
-
 	<center>
 		 <a href="<c:url value="/shop/selectProduct?categoryId=sale&productId=S001"/>">
 		    유모차 <img border="0" src="../images/separator.gif" /></a>
@@ -57,7 +55,6 @@
       <!-- /.col-lg-3 -->
 
       <div class="col-lg-9">
-
         <div class="card mt-2">
           <img class="card-img-top img-fluid" src="http://placehold.it/900x400" alt="">
           <div class="card-body">
@@ -72,7 +69,6 @@
            	<span style="font-size:15px; color:lightgray">게시일 : ${item.addDate}</span><br/><br/>
             <a href='<c:url value='/shop/addBidForm'><c:param name="itemId" value="${item.itemId}"/>
 				</c:url>' class="btn btn-warning">입찰 참여</a>
-
           </div>
         </div>
         <!-- /.card -->

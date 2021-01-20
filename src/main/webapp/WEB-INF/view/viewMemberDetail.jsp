@@ -4,9 +4,6 @@
 <!DOCTYPE html>
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
   <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
    <!-- Bootstrap core JavaScript -->
   <script src="../resource/vendor/jquery/jquery.min.js"></script>
@@ -17,12 +14,6 @@
  
   <!-- Custom styles for this template -->
   <link href="../resource/css/shop-homepage.css" rel="stylesheet">
-  <style>
-	a { color:black; text-decoration:none; }
-	li { list-style:none; margin-left:-1px; z-index:1; }
-	ul { display:inline-block; *display:inline; zoom:1;  margin-left: auto; margin-right: auto;}
-	h3 { text-align:center;}
-</style>
 </head>
 <body>
 <%@ include file="IncludeTop.jsp" %>

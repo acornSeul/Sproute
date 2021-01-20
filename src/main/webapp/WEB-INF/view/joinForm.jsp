@@ -20,8 +20,8 @@
         <script>
   			$( function() {
      		$( "#datepicker" ).datepicker( {
-	    	altFormat: "yyyymmdd",
-	    	dateFormat: 'yymmdd', //Input Display Format
+	    	altFormat: "yyyy-mm-dd",
+	    	dateFormat: 'yy-mm-dd', //Input Display Format
 	    	maxDate: "+0D",
 	    	minDate: '-100y',
 	    	showMonthAfterYear: true,
