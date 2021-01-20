@@ -93,15 +93,15 @@ public class Order {
       this.itemId = itemId;
    }
    public void initOrder(Account account) {
-	   userName = account.getName();
+	  userName = account.getName();
       orderDate = new String();
       userId = account.getUserId();
       
       shipAddress = "";
       address = account.getAddress();
       
-      cardNumber = "999 9999 9999 9999";
-      expireDate = "12/03";
+      cardNumber = "";
+      expireDate = "";
        cardType = "Visa";
    }
    @Override

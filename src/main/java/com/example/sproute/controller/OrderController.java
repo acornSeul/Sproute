@@ -37,12 +37,8 @@ public class OrderController {
    @Autowired
    private ItemService itemService;
    
-   /*@ModelAttribute("orderForm")
-   public OrderForm createOrderForm() {
-      return new OrderForm();
-   }*/
-   
-   @ModelAttribute("orderForm")      //registrationForm 객체를 생성하여 session에 저장
+   //registrationForm 객체를 생성하여 session에 저장
+   @ModelAttribute("orderForm")     
    public OrderForm formBacking(HttpServletRequest request, HttpSession session) {
       if (request.getMethod().equalsIgnoreCase("GET")) {
          OrderForm orderForm = new OrderForm();
@@ -62,60 +58,60 @@ public class OrderController {
    @ModelAttribute("creditCardTypes")
    public List<String> referenceData() {
       ArrayList<String> creditCardTypes = new ArrayList<String>();
+      
       creditCardTypes.add("Visa");
       creditCardTypes.add("MasterCard");
       creditCardTypes.add("American Express");
       return creditCardTypes;         
    }
    
+   //주문하기 창
    @RequestMapping("/shop/newOrder.do")
    public String initNewOrder(HttpServletRequest request,
-         @ModelAttribute("sessionCart") Cart cart,
-         @Valid @ModelAttribute("orderForm") OrderForm orderForm,
-         BindingResult result,
-         HttpSession session, Model model
-         ) throws ModelAndViewDefiningException {
-      if (cart.getNumberOfItems() == 0 && cart.getNumberOfUsedItems() == 0) {
-         model.addAttribute("message", "장바구니에 상품이 없습니다.");
-      } else {
-         if (request.getMethod().equalsIgnoreCase("GET")) {
-            if (cart != null) {
-               // Re-read account from DB at team's request.
-               /*Account account = accountService.selectMemberListByUserId(userSession);
-               orderForm.getOrder().initOrder(account, cart);*/
-               /*String userSession = session.getAttribute("userId").toString();
-               Account account = accountService.selectMemberListByUserId(userSession);
-               orderForm.getOrder().initOrder(account, cart);
-               System.out.println(orderForm.getOrder());*/
-               
-            	return "NewOrderForm";   
-            }
-         } else {
-            if(result.hasErrors()) {
-               return "NewOrderForm";
-            }
-            if (orderForm.isShippingAddressRequired()) {
-               model.addAttribute("shipAddress", true);
-            } else {
-               model.addAttribute("shipAddress", false);
-            }
-            return "ConfirmOrder";
-         }
-      }
-      return "cart";
+	         @ModelAttribute("sessionCart") Cart cart,
+	         @Valid @ModelAttribute("orderForm") OrderForm orderForm, BindingResult result, HttpSession session, Model model) throws ModelAndViewDefiningException {
+	      if (cart.getNumberOfItems() == 0 && cart.getNumberOfUsedItems() == 0) {
+	         model.addAttribute("message", "장바구니에 상품이 없습니다.");
+	      } else {
+	         if (request.getMethod().equalsIgnoreCase("GET")) {
+	            if (cart != null) {
+	               // Re-read account from DB at team's request.
+	               /*Account account = accountService.selectMemberListByUserId(userSession);
+	               orderForm.getOrder().initOrder(account, cart);*/
+	               /*String userSession = session.getAttribute("userId").toString();
+	               Account account = accountService.selectMemberListByUserId(userSession);
+	               orderForm.getOrder().initOrder(account, cart);
+	               System.out.println(orderForm.getOrder());*/
+	               
+	            	return "NewOrderForm";   
+	            }
+	         } else {
+	            if(result.hasErrors()) {
+	               return "NewOrderForm";
+	            }
+	            if (orderForm.isShippingAddressRequired()) {
+	               model.addAttribute("shipAddress", true);
+	            } else {
+	               model.addAttribute("shipAddress", false);
+	            }
+	            return "ConfirmOrder";
+	         }
+	      }
+	      return "cart";
    }
    
    @RequestMapping("/shop/confirmOrder.do")
    public String confirmOrder(HttpServletRequest request,
-         @ModelAttribute("sessionCart") Cart cart,
-         @ModelAttribute("orderForm") OrderForm orderForm,
-         HttpSession session, Model model, SessionStatus status) {
+			         @ModelAttribute("sessionCart") Cart cart,
+			         @ModelAttribute("orderForm") OrderForm orderForm,
+			         HttpSession session, Model model, SessionStatus status) {
       Iterator<CartItem> itemList = cart.getAll();
       //model.addAttribute("itemList", itemList);
       List<CartItem> items = new ArrayList<CartItem>();
        while (itemList.hasNext()) {
           CartItem cartItem = (CartItem) itemList.next();
           cartItem.getItem().setTotalPrice(cartItem.getQuantity() * cartItem.getItem().getPrice());
+          
           items.add(cartItem);
           orderForm.getOrder().setItemId(cartItem.getItem().getItemId());
           itemService.updateStock(cartItem.getQuantity(), cartItem.getItem().getItemId());
@@ -179,7 +175,6 @@ public class OrderController {
       cartItem.setItem(item);
       cartItem.setQuantity(1);
       //cartItem.getItem().setTotalPrice(cartItem.getQuantity() * cartItem.getItem().getPrice());
-      System.out.println("뭐가 나오니" + item);
       items.add(cartItem);
       model.addAttribute("items", items);
        if (orderForm.isShippingAddressRequired()) {

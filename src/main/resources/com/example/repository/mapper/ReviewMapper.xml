@@ -52,7 +52,7 @@
 
 <!-- 리뷰 점수 평균 -->
 	<select id="averageRating" resultType="com.example.sproute.domain.Review">
-		SELECT AVG(RATING) AS AVG
+		SELECT ROUND(AVG(RATING),1) AS AVG
 		FROM REVIEW
 		WHERE ITEMID = #{itemId}
 	</select>

@@ -69,8 +69,6 @@ public class ViewProductController {
 		model.put("review", review);
 		model.addAttribute("rating", rating);
 		
-		System.out.println(">>>>review>>>>>>" + review.get(0).getRegDate());
-		
 		return "SaleProductDetail";
 	}
 }
