@@ -96,7 +96,8 @@
           </div>
           <div class="card-body">
           <c:forEach var="re" items="${review}">
-	            <p>${re.content}&emsp;<span class="text-warning">&#9733;</span>${re.rating}</p>
+	            <p>${re.title}&emsp;<span class="text-warning">&#9733;</span>${re.rating}</p>
+	            <p style="font-size:12px">${re.content }</p>
 	            <small class="text-muted">작성자 : ${re.userId}&emsp;게시일 :  ${re.regDate}</small>
 	            <hr>
             </c:forEach>

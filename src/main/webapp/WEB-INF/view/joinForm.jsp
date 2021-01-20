@@ -48,7 +48,7 @@
 										action="register">
 										<div class="form-group">
 											<label class="small mb-1" for="userId">아이디</label>
-											<form:input class="form-control py-4" path="userId"
+											<form:input class="form-control" path="userId"
 												placeholder="아이디를 입력해주세요." />
 											<form:errors path="userId" />
 										</div>
@@ -56,7 +56,7 @@
 											<div class="col-md-6">
 												<div class="form-group">
 													<label class="small mb-1" for="password">비밀번호</label>
-													<form:password class="form-control py-4" path="password"
+													<form:password class="form-control" path="password"
 														placeholder="비밀번호를 입력해주세요." />
 													<form:errors path="password" />
 												</div>
@@ -64,7 +64,7 @@
 											<div class="col-md-6">
 												<div class="form-group">
 													<label class="small mb-1" for="cPassword">비밀번호 확인</label>
-													<form:password class="form-control py-4" path="cPassword"
+													<form:password class="form-control" path="cPassword"
 														placeholder="비밀번호 확인를 입력해주세요." />
 													<form:errors path="cPassword" />
 												</div>
@@ -72,46 +72,49 @@
 										</div>
 										<div class="form-group">
 											<label class="small mb-1" for="name">이름</label>
-											<form:input class="form-control py-4" path="name"
+											<form:input class="form-control" path="name"
 												placeholder="이름을 입력해주세요." />
 											<form:errors path="name" />
 										</div>
 										<div class="form-group">
 											<label class="small mb-1" for="email">이메일</label>
-											<form:input class="form-control py-4" path="email"
+											<form:input class="form-control" path="email"
 												placeholder="이메일을 입력해주세요." />
 											<form:errors path="email" />
 										</div>
+		
 										<div class="form-group">
-											<label class="small mb-2" for="zipCode">우편번호</label>
-											<div class="col-sm-3 col-form-label col-form-label-sm">
-												<form:input id="zipCode" class="form-control py-4" path="zipCode"/>
-												<form:errors path="zipCode" />
-												<input type="button" onclick="javascript:findZipCode()" value="우편번호찾기"/>
+										<label class="small mb-1" for="zipCode">우편번호</label>
+											<div class="form-row">
+												<div class="col-md-3">
+													<form:input id="zipCode" class="form-control " path="zipCode"/>
+													<form:errors path="zipCode" />
+												</div>
+												<a id="zipCode" class="btn btn-primary btn-sm" href="#" onclick="javascript:findZipCode()">우편번호 찾기</a>
 											</div>
-											
 										</div>
+											
 										<div class="form-group">
 											<label class="small mb-1" for="address">주소</label>
-											<form:input id="address" class="form-control py-4" path="address"
+											<form:input id="address" class="form-control" path="address"
 												placeholder="주소를 입력해주세요." />
 											<form:errors path="address" />
 										</div>
 										<div class="form-group">
 											<label class="small mb-1" for="detailAddress">상세주소</label>
-											<form:input id="detailAddress" class="form-control py-4" path="detailAddress"
+											<form:input id="detailAddress" class="form-control" path="detailAddress"
 												placeholder="상세주소" />
 											<form:errors path="detailAddress" />
 										</div>
 										<div class="form-group">
 											<label class="small mb-1" for="phone">전화번호</label>
-											<form:input class="form-control py-4" path="phone"
+											<form:input class="form-control" path="phone"
 												placeholder="전화번호를 입력해주세요." />
 											<form:errors path="phone" />
 										</div>
 										<div class="form-group">
 											<label class="small mb-1" for="birth">생년월일</label>
-											<form:input path="birth" class="form-control py-4" id="datepicker" placeholder="생년월일을 입력해주세요." readonly="true"/>
+											<form:input path="birth" class="form-control" id="datepicker" placeholder="생년월일을 입력해주세요." readonly="true"/>
 											<form:errors path="birth" />
 										</div>
 										<div class="form-group">
