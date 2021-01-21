@@ -11,7 +11,6 @@ public class Order {
    String orderId;
    String userId;
    String orderDate;
-   @NotBlank
    String shipAddress;
    @NotBlank
    String address;
@@ -98,7 +97,7 @@ public class Order {
       userId = account.getUserId();
       
       shipAddress = "";
-      address = account.getAddress();
+      address = account.getTotalAddress();
       
       cardNumber = "999 9999 9999 9999";
       expireDate = "21/01";

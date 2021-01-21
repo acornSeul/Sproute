@@ -6,7 +6,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-//jsp 확인하려고 만든거니까 지우고 다른 컨트롤러 사용하세욘@
+
 @Controller
 public class MyPageTestController {
 

@@ -75,14 +75,6 @@ public class OrderController {
          } else {
             if (request.getMethod().equalsIgnoreCase("GET")) {
                if (cart != null) {
-                  // Re-read account from DB at team's request.
-                  /*Account account = accountService.selectMemberListByUserId(userSession);
-                  orderForm.getOrder().initOrder(account, cart);*/
-                  /*String userSession = session.getAttribute("userId").toString();
-                  Account account = accountService.selectMemberListByUserId(userSession);
-                  orderForm.getOrder().initOrder(account, cart);
-                  System.out.println(orderForm.getOrder());*/
-                  
                   return "NewOrderForm";   
                }
             } else {
@@ -112,7 +104,6 @@ public class OrderController {
        while (itemList.hasNext()) {
           CartItem cartItem = (CartItem) itemList.next();
           cartItem.getItem().setTotalPrice(cartItem.getQuantity() * cartItem.getItem().getPrice());
-          
           items.add(cartItem);
           orderForm.getOrder().setItemId(cartItem.getItem().getItemId());
           itemService.updateStock(cartItem.getQuantity(), cartItem.getItem().getItemId());
