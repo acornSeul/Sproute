@@ -18,6 +18,9 @@ if (message != "") {
    alert(message);
 }
 </script>
+<style>
+	table { text-align:center;}
+</style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
