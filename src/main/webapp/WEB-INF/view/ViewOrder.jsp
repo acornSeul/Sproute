@@ -11,9 +11,14 @@
 </head>
 <body>
 <%@ include file="IncludeTop.jsp" %>
-<%@ include file="IncludeSidebar.jsp" %>
-<div align="center">
-<table>
+
+
+<div class="container">
+	<div class="row">
+		<%@ include file="IncludeSidebar.jsp" %>
+			<div class="col-lg-9">
+				<h3 class="my-4">주문 확인서</h3>
+				<table>
     <tr>
       <td align="center" colspan="2"><font size="4">
         <b>Order #<c:out value="${orderForm.order.orderId}" /></b></font> <br />
@@ -102,10 +107,22 @@
               </td>
             </tr>
           </c:forEach>
-        </table>
+        </table><br/>
+        <a href="<c:url value="/"/>" class="btn-sm btn-primary">확인</a>
       </td>
     </tr>
   </table>
 </div>
+</div>
+</div><br/><br/>
+
+ <!-- Footer -->
+ <footer class="py-5 bg-dark">
+   <div class="container">
+     <p class="m-0 text-center text-white">Copyright &copy; Sproute 2021</p>
+   </div>
+   <!-- /.container -->
+ </footer>
+
 </body>
 </html>

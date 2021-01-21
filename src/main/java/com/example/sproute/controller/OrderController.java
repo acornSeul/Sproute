@@ -68,48 +68,50 @@ public class OrderController {
    //주문하기 창
    @RequestMapping("/shop/newOrder.do")
    public String initNewOrder(HttpServletRequest request,
-	         @ModelAttribute("sessionCart") Cart cart,
-	         @Valid @ModelAttribute("orderForm") OrderForm orderForm, BindingResult result, HttpSession session, Model model) throws ModelAndViewDefiningException {
-	      if (cart.getNumberOfItems() == 0 && cart.getNumberOfUsedItems() == 0) {
-	         model.addAttribute("message", "장바구니에 상품이 없습니다.");
-	      } else {
-	         if (request.getMethod().equalsIgnoreCase("GET")) {
-	            if (cart != null) {
-	               // Re-read account from DB at team's request.
-	               /*Account account = accountService.selectMemberListByUserId(userSession);
-	               orderForm.getOrder().initOrder(account, cart);*/
-	               /*String userSession = session.getAttribute("userId").toString();
-	               Account account = accountService.selectMemberListByUserId(userSession);
-	               orderForm.getOrder().initOrder(account, cart);
-	               System.out.println(orderForm.getOrder());*/
-	               
-	            	return "NewOrderForm";   
-	            }
-	         } else {
-	            if(result.hasErrors()) {
-	               return "NewOrderForm";
-	            }
-	            if (orderForm.isShippingAddressRequired()) {
-	               model.addAttribute("shipAddress", true);
-	            } else {
-	               model.addAttribute("shipAddress", false);
-	            }
-	            return "ConfirmOrder";
-	         }
-	      }
-	      return "cart";
+            @ModelAttribute("sessionCart") Cart cart,
+            @Valid @ModelAttribute("orderForm") OrderForm orderForm, BindingResult result, HttpSession session, Model model) throws ModelAndViewDefiningException {
+         if (cart.getNumberOfItems() == 0 && cart.getNumberOfUsedItems() == 0) {
+            model.addAttribute("message", "장바구니에 상품이 없습니다.");
+         } else {
+            if (request.getMethod().equalsIgnoreCase("GET")) {
+               if (cart != null) {
+                  // Re-read account from DB at team's request.
+                  /*Account account = accountService.selectMemberListByUserId(userSession);
+                  orderForm.getOrder().initOrder(account, cart);*/
+                  /*String userSession = session.getAttribute("userId").toString();
+                  Account account = accountService.selectMemberListByUserId(userSession);
+                  orderForm.getOrder().initOrder(account, cart);
+                  System.out.println(orderForm.getOrder());*/
+                  
+                  return "NewOrderForm";   
+               }
+            } else {
+               if(result.hasErrors()) {
+                  return "NewOrderForm";
+               }
+               if (orderForm.isShippingAddressRequired()) {
+                  model.addAttribute("shipAddress", true);
+               } else {
+                  model.addAttribute("shipAddress", false);
+               }
+               return "ConfirmOrder";
+            }
+         }
+         return "cart";
    }
    
    @RequestMapping("/shop/confirmOrder.do")
    public String confirmOrder(HttpServletRequest request,
-			         @ModelAttribute("sessionCart") Cart cart,
-			         @ModelAttribute("orderForm") OrderForm orderForm,
-			         HttpSession session, Model model, SessionStatus status) {
+                  @ModelAttribute("sessionCart") Cart cart,
+                  @ModelAttribute("orderForm") OrderForm orderForm,
+                  HttpSession session, Model model, SessionStatus status) {
       Iterator<CartItem> itemList = cart.getAll();
       //model.addAttribute("itemList", itemList);
       List<CartItem> items = new ArrayList<CartItem>();
        while (itemList.hasNext()) {
+          
           CartItem cartItem = (CartItem) itemList.next();
+          System.out.println(cartItem.getItem().getPrice() + "이거" + cartItem.getItem().getTitle());
           cartItem.getItem().setTotalPrice(cartItem.getQuantity() * cartItem.getItem().getPrice());
           
           items.add(cartItem);
@@ -167,7 +169,6 @@ public class OrderController {
          @ModelAttribute("AuctionId") OrderAuction AuctionId,
    @ModelAttribute("orderForm") OrderForm orderForm,
    HttpSession session, Model model, SessionStatus status) {
-      //System.out.println("들어왔엉" + AuctionId.getAuctionId());
       List<CartItem> items = new ArrayList<CartItem>();
       CartItem cartItem = new CartItem();
       Item item = itemService.selectItem(AuctionId.getAuctionId());
