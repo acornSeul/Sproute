@@ -66,4 +66,8 @@ public class ItemMapperRepository {
 	public void updateStock(int stock, String itemId) {
 		sqlSession.getMapper(ItemMapper.class).updateStock(stock, itemId);
 	}
+	
+	public void updateStockAfterDelete(int quantity, String itemId) {
+		sqlSession.getMapper(ItemMapper.class).updateStockAfterDelete(quantity, itemId);
+	}
 }

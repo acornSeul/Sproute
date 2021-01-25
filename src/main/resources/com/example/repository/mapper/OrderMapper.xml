@@ -7,8 +7,8 @@
 		<selectKey keyProperty="orderId" resultType="String" order="BEFORE">
 			SELECT SEQ_ORDER.nextval AS orderId FROM DUAL
 		</selectKey>
-		INSERT INTO ORDERITEM(ORDERID, ORDERDATE, SHIPADDRESS, ADDRESS, TOTALPRICE, CARDTYPE, CARDNUMBER, EXPIRYDATE, USERNAME, USERID, ITEMID)
-			VALUES(#{orderId}, SYSDATE, #{shipAddress}, #{address}, #{totalPrice}, #{cardType}, #{cardNumber}, #{expireDate}, #{userName}, #{userId}, #{itemId})
+		INSERT INTO ORDERITEM(ORDERID, ORDERDATE, SHIPADDRESS, ADDRESS, TOTALPRICE, CARDTYPE, CARDNUMBER, EXPIRYDATE, USERNAME, USERID, ITEMID, QUANTITY)
+			VALUES(#{orderId}, SYSDATE, #{shipAddress}, #{address}, #{totalPrice}, #{cardType}, #{cardNumber}, #{expireDate}, #{userName}, #{userId}, #{itemId}, #{quantity})
 	</insert>
 	
 	<select id = "selectOrderByUserId" parameterType="String" resultType="Order">
@@ -49,4 +49,11 @@
 	<delete id = "deleteOrder" parameterType="String">
 		DELETE FROM ORDERITEM WHERE ORDERID = #{orderId}
 	</delete>
+	
+	<select id="selectItemIdByOrderId" parameterType="String" resultType="Order">
+		SELECT ITEMID, QUANTITY
+		FROM ORDERITEM
+		WHERE ORDERID = #{orderId}
+	</select>
+	
 </mapper>

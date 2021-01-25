@@ -34,6 +34,7 @@ public class MyPageAuctionController {
 		return "MyPageAuction";
 	}
 	
+	//등록한 경매 상품 삭제
 	@RequestMapping("/mypage/MyAuctionMain/delete") 
 	public String DeleteMyAuction(@RequestParam(value="auctionId") String auctionId, ModelMap model, HttpSession session) throws Exception {
 		Integer delete = myService.deleteMyAuctionItemByAutionId(auctionId);
@@ -49,6 +50,7 @@ public class MyPageAuctionController {
 		return "ModifyMyAuctionItem";
 	}
 	
+	//경매 등록 상품 수정
 	@PostMapping("/mypage/MyAuctionMain/updateForm")
 	public String updateSubmit(@ModelAttribute("updateCommand") Auction action, HttpSession session) {
 		Integer result = myService.updateMyAddAuctionItem(action);

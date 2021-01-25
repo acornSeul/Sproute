@@ -65,7 +65,7 @@ public class OrderController {
       return creditCardTypes;         
    }
    
-   //장바구니주문하기 폼
+   //장바구니 주문하기 폼
    @RequestMapping("/shop/newOrder.do")
    public String initNewOrder(HttpServletRequest request,
             @ModelAttribute("sessionCart") Cart cart,
@@ -103,9 +103,14 @@ public class OrderController {
       List<CartItem> items = new ArrayList<CartItem>();
        while (itemList.hasNext()) {
           CartItem cartItem = (CartItem) itemList.next();
+          
           cartItem.getItem().setTotalPrice(cartItem.getQuantity() * cartItem.getItem().getPrice());
           items.add(cartItem);
+          
           orderForm.getOrder().setItemId(cartItem.getItem().getItemId());
+          orderForm.getOrder().setTotalPrice(cartItem.getQuantity() * cartItem.getItem().getPrice());
+          orderForm.getOrder().setQuantity(cartItem.getQuantity());
+          
           itemService.updateStock(cartItem.getQuantity(), cartItem.getItem().getItemId());
           orderService.insertOrder(orderForm.getOrder());
        }

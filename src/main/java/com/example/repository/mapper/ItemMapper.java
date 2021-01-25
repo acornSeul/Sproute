@@ -33,4 +33,6 @@ public interface ItemMapper {
 	int getItemStock(String itemId);	//상품 재고 수량 -> Order 구현 시
 	
 	void updateStock(int stock, String itemId);
+	
+	void updateStockAfterDelete(int quantity, String itemId);
 }

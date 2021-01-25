@@ -15,4 +15,6 @@ public interface OrderMapper {
 	List<Order> selectOrderDate(String userId);
 	
 	void deleteOrder(String orderId);
+	
+	List<Order> selectItemIdByOrderId (String orderId);
 }

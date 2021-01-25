@@ -144,8 +144,14 @@
   </select>
   
   <update id="updateStock">
-  UPDATE ITEM
-  SET STOCK = STOCK - #{param1}
-  WHERE ITEMID = #{param2}
+	  UPDATE ITEM
+	  SET STOCK = STOCK - #{param1}
+	  WHERE ITEMID = #{param2}
+  </update>
+  
+    <update id="updateStockAfterDelete">
+	  UPDATE ITEM
+	  SET STOCK = STOCK + #{param1}
+	  WHERE ITEMID = #{param2}
   </update>
  </mapper>

@@ -28,4 +28,8 @@ public class OrderMapperRepository {
 	public void deleteOrder(String orderId) {
 		sqlSession.getMapper(OrderMapper.class).deleteOrder(orderId);
 	}
+	
+	public List<Order> selectItemIdByOrderId (String orderId) {
+		return sqlSession.getMapper(OrderMapper.class).selectItemIdByOrderId(orderId);
+	}
 }

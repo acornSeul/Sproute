@@ -71,14 +71,12 @@ public class MyPageBidController {
 		return "MyPageBid";
 	}
 	
+	//입찰 취소
 	@RequestMapping("/mypage/MyBidMain/delete")
 	public String DeleteMyBid(@RequestParam("bidId") String bidId, Model model, HttpSession session, HttpServletRequest request) {
 		String auctionId = as.selectAuctionId(bidId);
 		int updateParticipant = as.updateParticipantAfter(auctionId);
 		int BidDelete = myService.deleteMyBid(bidId);
-	
-		System.out.println("update Result :" + updateParticipant);
-		System.out.println("delete Result :" + BidDelete);
 		
 		return "redirect:/mypage/MyBidMain";
 	}

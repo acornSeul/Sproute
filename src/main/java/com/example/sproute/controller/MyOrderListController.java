@@ -42,12 +42,8 @@ public class MyOrderListController {
 			} else {
 				itemMap.put(item.getItemId(), item);
 			}
-			
-			System.out.println(">>>>>order info>>>>>>" + orders.get(i).toString());
 		}
-		
-		
-		
+
 		model.addAttribute("items", itemMap);
  		model.addAttribute("orders", orders);
 		return "MyPageOrderList";
@@ -56,7 +52,17 @@ public class MyOrderListController {
 	@RequestMapping("/mypage/MyOrderList/cancel") 
 	public String CancelOrder(@RequestParam(value="orderId") String orderId,
 			ModelMap model, HttpSession session) throws Exception {
-		orderService.deleteOrder(orderId);	
+		//삭제 전 itemId, quantity 가져오기
+		String itemId = orderService.selectItemIdByOrderId(orderId).get(0).getItemId();
+		int quantity = orderService.selectItemIdByOrderId(orderId).get(0).getQuantity();
+		
+		itemService.updateStockAfterDelete(quantity, itemId);
+		orderService.deleteOrder(orderId);
+		
+		System.out.println(">>>>ORDERID>>>>> : " + orderId);
+		System.out.println(">>>>ITEMID>>>>> : " + itemId);
+		
+		
 		return "redirect:/mypage/MyOrderList";
 	}
 	

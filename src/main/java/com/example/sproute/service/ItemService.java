@@ -66,4 +66,8 @@ public class ItemService {
 	public List<Item> selectAllAuction(String categoryId) {
 		return itemRepository.selectAllAuction(categoryId);
 	}
+	
+	public void updateStockAfterDelete(int quantity, String itemId) {
+		itemRepository.updateStockAfterDelete(quantity, itemId);
+	}
 }

@@ -27,5 +27,8 @@ public class OrderService {
 	public void deleteOrder(String orderId) {
 		orderMapperRepository.deleteOrder(orderId);
 	}
+	public List<Order> selectItemIdByOrderId (String orderId) {
+		return orderMapperRepository.selectItemIdByOrderId(orderId);
+	}
 
 }
