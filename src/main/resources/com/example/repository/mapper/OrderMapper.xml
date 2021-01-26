@@ -7,7 +7,7 @@
 		<selectKey keyProperty="orderId" resultType="String" order="BEFORE">
 			SELECT SEQ_ORDER.nextval AS orderId FROM DUAL
 		</selectKey>
-		INSERT INTO ORDERITEM(ORDERID, ORDERDATE, SHIPADDRESS, ADDRESS, TOTALPRICE, CARDTYPE, CARDNUMBER, EXPIRYDATE, USERNAME, USERID, ITEMID, QUANTITY)
+		INSERT INTO ORDERLIST(ORDERID, ORDERDATE, SHIPADDRESS, ADDRESS, TOTALPRICE, CARDTYPE, CARDNUMBER, EXPIRYDATE, USERNAME, USERID, ITEMID, QUANTITY)
 			VALUES(#{orderId}, SYSDATE, #{shipAddress}, #{address}, #{totalPrice}, #{cardType}, #{cardNumber}, #{expireDate}, #{userName}, #{userId}, #{itemId}, #{quantity})
 	</insert>
 	
@@ -24,7 +24,7 @@
 			USERNAME, 
 			USERID, 
 			ITEMID
-		FROM ORDERITEM
+		FROM ORDERLIST
 		WHERE USERID = #{userId}
 		ORDER BY ORDERDATE DESC
 	</select>
@@ -42,17 +42,18 @@
 			USERNAME, 
 			USERID, 
 			ITEMID
-		FROM ORDERITEM
+		FROM ORDERLIST
 		WHERE ORDERDATE = #{orderDate}, USERID = #{userId}
 	</select>
 	
 	<delete id = "deleteOrder" parameterType="String">
-		DELETE FROM ORDERITEM WHERE ORDERID = #{orderId}
+		DELETE FROM ORDERLIST 
+		WHERE ORDERID = #{orderId}
 	</delete>
 	
 	<select id="selectItemIdByOrderId" parameterType="String" resultType="Order">
 		SELECT ITEMID, QUANTITY
-		FROM ORDERITEM
+		FROM ORDERLIST
 		WHERE ORDERID = #{orderId}
 	</select>
 	

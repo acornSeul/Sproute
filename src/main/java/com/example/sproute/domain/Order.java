@@ -24,7 +24,6 @@ public class Order {
 	String expireDate;
 	@NotBlank
 	String userName; // 회원이름
-	String itemId;
 	int quantity;
 
 	public int getQuantity() {
@@ -115,14 +114,6 @@ public class Order {
 		this.userName = userName;
 	}
 
-	public String getItemId() {
-		return itemId;
-	}
-
-	public void setItemId(String itemId) {
-		this.itemId = itemId;
-	}
-
 	public void initOrder(Account account) {
 		userName = account.getName();
 		orderDate = new String();
@@ -141,7 +132,7 @@ public class Order {
 		return "Order [orderId=" + orderId + ", userId=" + userId + ", orderDate=" + orderDate + ", shipAddress="
 				+ shipAddress + ", address=" + address + ", totalPrice=" + totalPrice + ", cardType=" + cardType
 				+ ", cardNumber=" + cardNumber + ", expireDate=" + expireDate + ", userName=" + userName + "itemId="
-				+ itemId + "]";
+				+ "]";
 	}
 
 }

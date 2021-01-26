@@ -107,7 +107,7 @@ public class OrderController {
           cartItem.getItem().setTotalPrice(cartItem.getQuantity() * cartItem.getItem().getPrice());
           items.add(cartItem);
           
-          orderForm.getOrder().setItemId(cartItem.getItem().getItemId());
+          //orderForm.getOrder().setItemId(cartItem.getItem().getItemId());
           orderForm.getOrder().setTotalPrice(cartItem.getQuantity() * cartItem.getItem().getPrice());
           orderForm.getOrder().setQuantity(cartItem.getQuantity());
           
@@ -181,7 +181,7 @@ public class OrderController {
          model.addAttribute("shipAddress", false);
       }
        model.addAttribute("check", 1);
-       orderForm.getOrder().setItemId(AuctionId.getAuctionId());
+       //orderForm.getOrder().setItemId(AuctionId.getAuctionId());
        itemService.updateStock(1, AuctionId.getAuctionId());
        orderService.insertOrder(orderForm.getOrder());
       status.setComplete();

@@ -35,6 +35,7 @@ public class MyOrderListController {
 		String userId = session.getAttribute("userId").toString();
 		List<Order> orders = orderService.selectOrderByUserId(userId);
 		Item item;
+		/*
 		for (int i = 0; i < orders.size(); i++) {
 			item = itemService.selectItem(orders.get(i).getItemId());
 			if (item == null) {
@@ -43,7 +44,7 @@ public class MyOrderListController {
 				itemMap.put(item.getItemId(), item);
 			}
 		}
-
+*/
 		model.addAttribute("items", itemMap);
  		model.addAttribute("orders", orders);
 		return "MyPageOrderList";
@@ -53,14 +54,11 @@ public class MyOrderListController {
 	public String CancelOrder(@RequestParam(value="orderId") String orderId,
 			ModelMap model, HttpSession session) throws Exception {
 		//삭제 전 itemId, quantity 가져오기
-		String itemId = orderService.selectItemIdByOrderId(orderId).get(0).getItemId();
+		//String itemId = orderService.selectItemIdByOrderId(orderId).get(0).getItemId();
 		int quantity = orderService.selectItemIdByOrderId(orderId).get(0).getQuantity();
 		
-		itemService.updateStockAfterDelete(quantity, itemId);
+		//itemService.updateStockAfterDelete(quantity, itemId);
 		orderService.deleteOrder(orderId);
-		
-		System.out.println(">>>>ORDERID>>>>> : " + orderId);
-		System.out.println(">>>>ITEMID>>>>> : " + itemId);
 		
 		
 		return "redirect:/mypage/MyOrderList";
