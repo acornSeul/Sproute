@@ -7,6 +7,13 @@ public class OrderDetail {
 	int price;
 	int quantity;
 	
+	public OrderDetail(String orderId, String itemId, int price, int quantity) {
+		this.orderId = orderId;
+		this.itemId = itemId;
+		this.price = price;
+		this.quantity = quantity;
+	}
+	
 	public String getDetailId() {
 		return detailId;
 	}

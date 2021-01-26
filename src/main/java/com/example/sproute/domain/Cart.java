@@ -113,7 +113,7 @@ public class Cart implements Serializable{
 	    return subTotal;
 	}
 	
-	public double getUsedSubTotal() {	//장바구니에 담긴 아이템의 전체 가격
+	public double getUsedSubTotal() {	//중고 장바구니에 담긴 아이템의 전체 가격
 	    double subTotal = 0;
 	    Iterator<CartItem> useditems = getUsedCartItems();
 	    

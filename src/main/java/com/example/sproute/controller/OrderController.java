@@ -23,8 +23,10 @@ import com.example.sproute.domain.Account;
 import com.example.sproute.domain.Cart;
 import com.example.sproute.domain.CartItem;
 import com.example.sproute.domain.Item;
+import com.example.sproute.domain.OrderDetail;
 import com.example.sproute.service.AccountService;
 import com.example.sproute.service.ItemService;
+import com.example.sproute.service.OrderDetailService;
 import com.example.sproute.service.OrderService;
 
 @Controller
@@ -36,6 +38,8 @@ public class OrderController {
    private OrderService orderService;
    @Autowired
    private ItemService itemService;
+   @Autowired
+   private OrderDetailService detailService;
    
    //registrationForm 객체를 생성하여 session에 저장
    @ModelAttribute("orderForm")     
@@ -101,19 +105,45 @@ public class OrderController {
       Iterator<CartItem> itemList = cart.getAll();
       //model.addAttribute("itemList", itemList);
       List<CartItem> items = new ArrayList<CartItem>();
-       while (itemList.hasNext()) {
+      OrderDetail detail;
+      
+      int totalPrice = 0;
+      int totalQuantity = 0;
+      List<String> detailItem = new ArrayList<String>();
+      List<Integer> detailPrice = new ArrayList<Integer>();
+      List<Integer> detailQuantity = new ArrayList<Integer>();
+      
+      while (itemList.hasNext()) {
           CartItem cartItem = (CartItem) itemList.next();
           
           cartItem.getItem().setTotalPrice(cartItem.getQuantity() * cartItem.getItem().getPrice());
           items.add(cartItem);
           
-          //orderForm.getOrder().setItemId(cartItem.getItem().getItemId());
-          orderForm.getOrder().setTotalPrice(cartItem.getQuantity() * cartItem.getItem().getPrice());
-          orderForm.getOrder().setQuantity(cartItem.getQuantity());
+          totalQuantity += cartItem.getQuantity();
+          totalPrice += cartItem.getItem().getTotalPrice();
+          
+          detailItem.add(cartItem.getItem().getItemId());
+          detailPrice.add(cartItem.getItem().getPrice());
+          detailQuantity.add(cartItem.getQuantity());
           
           itemService.updateStock(cartItem.getQuantity(), cartItem.getItem().getItemId());
-          orderService.insertOrder(orderForm.getOrder());
+
        }
+      
+      //orderList insert
+       orderForm.getOrder().setTotalPrice(totalPrice);
+       orderForm.getOrder().setQuantity(totalQuantity);
+       
+       orderService.insertOrder(orderForm.getOrder());
+       
+       //orderDetail insert
+       for(int i = 0; i < detailItem.size(); i++) {
+    	   detail = new OrderDetail(orderForm.getOrder().getOrderId(), detailItem.get(i),
+    			   detailPrice.get(i), detailQuantity.get(i));
+           
+           detailService.insertOrderDetail(detail);
+       }
+       
        model.addAttribute("items", items);
        if (orderForm.isShippingAddressRequired()) {
          model.addAttribute("shipAddress", true);

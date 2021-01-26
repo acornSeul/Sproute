@@ -7,8 +7,8 @@
 		<selectKey keyProperty="orderId" resultType="String" order="BEFORE">
 			SELECT SEQ_ORDER.nextval AS orderId FROM DUAL
 		</selectKey>
-		INSERT INTO ORDERLIST(ORDERID, ORDERDATE, SHIPADDRESS, ADDRESS, TOTALPRICE, CARDTYPE, CARDNUMBER, EXPIRYDATE, USERNAME, USERID, ITEMID, QUANTITY)
-			VALUES(#{orderId}, SYSDATE, #{shipAddress}, #{address}, #{totalPrice}, #{cardType}, #{cardNumber}, #{expireDate}, #{userName}, #{userId}, #{itemId}, #{quantity})
+		INSERT INTO ORDERLIST(ORDERID, ORDERDATE, SHIPADDRESS, ADDRESS, TOTALPRICE, CARDTYPE, CARDNUMBER, EXPIRYDATE, USERNAME, USERID, QUANTITY)
+			VALUES(#{orderId}, SYSDATE, #{shipAddress}, #{address}, #{totalPrice}, #{cardType}, #{cardNumber}, #{expireDate}, #{userName}, #{userId}, #{quantity})
 	</insert>
 	
 	<select id = "selectOrderByUserId" parameterType="String" resultType="Order">
