@@ -7,8 +7,8 @@
 		<selectKey keyProperty="orderId" resultType="String" order="BEFORE">
 			SELECT SEQ_ORDER.nextval AS orderId FROM DUAL
 		</selectKey>
-		INSERT INTO ORDERLIST(ORDERID, ORDERDATE, SHIPADDRESS, ADDRESS, TOTALPRICE, CARDTYPE, CARDNUMBER, EXPIRYDATE, USERNAME, USERID, ITEMID, QUANTITY)
-			VALUES(#{orderId}, SYSDATE, #{shipAddress}, #{address}, #{totalPrice}, #{cardType}, #{cardNumber}, #{expireDate}, #{userName}, #{userId}, #{itemId}, #{quantity})
+		INSERT INTO ORDERLIST(ORDERID, ORDERDATE, SHIPADDRESS, ADDRESS, TOTALPRICE, CARDTYPE, CARDNUMBER, EXPIRYDATE, USERNAME, USERID, QUANTITY)
+			VALUES(#{orderId}, SYSDATE, #{shipAddress}, #{address}, #{totalPrice}, #{cardType}, #{cardNumber}, #{expireDate}, #{userName}, #{userId}, #{quantity})
 	</insert>
 	
 	<select id = "selectOrderByUserId" parameterType="String" resultType="Order">
@@ -23,7 +23,7 @@
 			EXPIRYDATE, 
 			USERNAME, 
 			USERID, 
-			ITEMID
+			QUANTITY
 		FROM ORDERLIST
 		WHERE USERID = #{userId}
 		ORDER BY ORDERDATE DESC
@@ -41,7 +41,6 @@
 			EXPIRYDATE, 
 			USERNAME, 
 			USERID, 
-			ITEMID
 		FROM ORDERLIST
 		WHERE ORDERDATE = #{orderDate}, USERID = #{userId}
 	</select>
@@ -51,10 +50,20 @@
 		WHERE ORDERID = #{orderId}
 	</delete>
 	
-	<select id="selectItemIdByOrderId" parameterType="String" resultType="Order">
-		SELECT ITEMID, QUANTITY
+	<select id="selectOrderByOrderId" parameterType="String" resultType="Order">
+		SELECT 
+			ORDERID, 
+			TO_CHAR(ORDERDATE, 'YYYY-MM-DD HH:MM:DD') AS ORDERDATE, 
+			SHIPADDRESS, 
+			ADDRESS, 
+			TOTALPRICE, 
+			CARDTYPE, 
+			CARDNUMBER, 
+			EXPIRYDATE, 
+			USERNAME, 
+			USERID, 
+			QUANTITY
 		FROM ORDERLIST
 		WHERE ORDERID = #{orderId}
 	</select>
-	
 </mapper>

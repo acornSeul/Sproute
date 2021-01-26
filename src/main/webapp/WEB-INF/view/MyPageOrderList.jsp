@@ -41,9 +41,9 @@
            <thead class="thead-light">
              <tr>
                <th scope="col">주문 일자</th>
-               <th scope="col">상품명</th>
-               <th scope="col">주문자</th>
-               <th scope="col">배송지</th>
+               <th scope="col">주문자명</th>
+               <th scope="col">결제금액</th>
+               <th scope="col">상세보기</th>
                <th scope="col">관리</th>
              </tr>
            </thead>
@@ -51,33 +51,20 @@
            <c:forEach var="orders" items="${orders}">
             <tr>
                <td>
-                  <c:out value="${orders.orderDate}"/></td>
-               <td>
-               	<c:if test='${not empty items[orders.itemId]}'>
-               		<c:if test='${items[orders.itemId].categoryId.equals("sale")}'>
-	                 	<a href='<c:url value="/shop/viewItemDetail.do">
-	                  	<c:param name="itemId" value="${orders.itemId}"/></c:url>'>
-	                    <font color="black">${items[orders.itemId].title}</font></a>
-                 	</c:if>
-                 	<c:if test='${items[orders.itemId].categoryId.equals("used")}'>
-	                 	<a href='<c:url value="/shop/viewProduct">
-	                 	<c:param name="itemId" value="${orders.itemId}"/></c:url>'>
-	                    <font color="black">${items[orders.itemId].title}</font></a>
-                 	</c:if>
-                 	<c:if test='${items[orders.itemId].categoryId.equals("Auction")}'>
-	                 	<a href='<c:url value="/shop/auctionItemDetail">
-	                 	<c:param name="itemId" value="${orders.itemId}"/></c:url>'>
-	                    <font color="black">${items[orders.itemId].title}</font></a>
-            		</c:if>
-               	</c:if>
-               	<c:if test='${empty items[orders.itemId]}'>
-					<c:out value="존재하지 않는 상품입니다."/>
-       			</c:if>
+                  <c:out value="${orders.orderDate}"/>
                </td>
                <td>
-                  <c:out value="${orders.userName}"/></td>
-               <td> ${orders.shipAddress}</td>
-               	<td><a href='<c:url value="/mypage/MyOrderList/cancel">
+                  <c:out value="${orders.userName}"/>
+               </td>
+               <td>
+              	  <c:out value="${orders.totalPrice}"/>		
+               </td>
+               <td>
+               	  <a href='<c:url value="/mypage/MyOrderList/orderDetail">
+	 				<c:param name="orderId" value="${orders.orderId}"/></c:url>'><strong>주문상세보기</strong></a></td>
+               </td>
+               <td>
+               	  <a href='<c:url value="/mypage/MyOrderList/cancel">
 	 				<c:param name="orderId" value="${orders.orderId}"/></c:url>'><strong>주문 취소</strong></a></td>
             </tr>
 	 			

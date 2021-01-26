@@ -29,7 +29,7 @@ public class OrderMapperRepository {
 		sqlSession.getMapper(OrderMapper.class).deleteOrder(orderId);
 	}
 	
-	public List<Order> selectItemIdByOrderId (String orderId) {
-		return sqlSession.getMapper(OrderMapper.class).selectItemIdByOrderId(orderId);
+	public Order selectOrderByOrderId (String orderId) {
+		return sqlSession.getMapper(OrderMapper.class).selectOrderByOrderId(orderId);
 	}
 }
