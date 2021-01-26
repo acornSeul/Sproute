@@ -6,6 +6,7 @@ public class OrderDetail {
 	String itemId;
 	int price;
 	int quantity;
+	
 	public String getDetailId() {
 		return detailId;
 	}
