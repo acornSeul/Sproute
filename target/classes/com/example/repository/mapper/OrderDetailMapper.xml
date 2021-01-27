@@ -3,9 +3,9 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.example.repository.mapper.OrderDetailMapper">
-	<!-- 주문하기 -->
-	<insert id="insertOrderDetail" parameterType="OrderDetail">
-		<selectKey keyProperty="detailId" resultType="String" order="BEFORE">
+<!-- 주문하기 -->
+	<insert id = "insertOrderDetail" parameterType="OrderDetail">
+	<selectKey keyProperty="detailId" resultType="String" order="BEFORE">
 			SELECT SEQ_DETAIL.nextval AS detailId FROM DUAL
 		</selectKey>
 		INSERT INTO ORDERDETAIL(DETAILID, ORDERID, ITEMID, PRICE, QUANTITY)
@@ -23,12 +23,8 @@
 		WHERE D.ORDERID = L.ORDERID AND D.ORDERID = #{orderId}
 	</select>
 
-	<!-- 유저아이디로 주문번호 조회 -->
-	<select id="selectOrderListByUserID" resultType="String">
-	</select>
-
-	<!-- 주문 취소 -->
-	<delete id="deleteOrderDetail" parameterType="String">
+<!-- 주문 취소 -->
+	<delete id = "deleteOrderDetail" parameterType="String">
 	</delete>
-
+	
 </mapper>
