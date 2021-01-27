@@ -81,11 +81,7 @@ public class MyOrderListController {
 			orderDetailService.deleteOrderDetail(orderId);
 		}
 		orderService.deleteOrder(orderId);
-//		String itemId = orderService.selectItemIdByOrderId(orderId).get(0).getItemId();
-//		int quantity = orderService.selectItemIdByOrderId(orderId).get(0).getQuantity();
-//		
-//		itemService.updateStockAfterDelete(quantity, itemId);
-//		
+		
 		return "redirect:/mypage/MyOrderList";
 	}
 	
