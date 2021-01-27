@@ -5,6 +5,11 @@
 <mapper namespace="com.example.repository.mapper.OrderDetailMapper">
 <!-- 주문하기 -->
 	<insert id = "insertOrderDetail" parameterType="OrderDetail">
+	<selectKey keyProperty="detailId" resultType="String" order="BEFORE">
+			SELECT SEQ_DETAIL.nextval AS detailId FROM DUAL
+		</selectKey>
+		INSERT INTO ORDERDETAIL(DETAILID, ORDERID, ITEMID, PRICE, QUANTITY)
+			VALUES(#{detailId}, #{orderId}, #{itemId}, #{price}, #{quantity})
 	</insert>
 	
 <!-- 주문번호로 구매 상품 조회 -->
