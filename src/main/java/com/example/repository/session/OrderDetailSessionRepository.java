@@ -37,5 +37,12 @@ public class OrderDetailSessionRepository {
 	public void deleteOrderDetail (String detailId) {
 		sqlSession.delete(namespace + ".deleteOrderDetail", detailId);
 	}
+	
+	//삭제할 주문내역 정보 조회
+	public List<OrderDetail> selectItemInfoByOrderId (String orderId){
+		List<OrderDetail> list = sqlSession.selectList(namespace + ".selectItemInfoByOrderId", orderId);
+		
+		return list;
+	}
 
 }

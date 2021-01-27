@@ -8,6 +8,10 @@ public class OrderDetail {
 	int price;
 	int quantity;
 	
+	public OrderDetail() {
+		
+	}
+	
 	public OrderDetail(String orderId, String itemId, String title, int price, int quantity) {
 		this.orderId = orderId;
 		this.itemId = itemId;

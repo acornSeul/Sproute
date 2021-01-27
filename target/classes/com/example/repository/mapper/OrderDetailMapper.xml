@@ -29,5 +29,12 @@
 		DELETE FROM ORDERDETAIL
 		WHERE ORDERID = #{orderId}
 	</delete>
+
+<!-- 삭제할 주문내역 수량, 아이템 아이디 조회 -->
+	<select id="selectItemInfoByOrderId" parameterType="String" resultType="OrderDetail">
+		SELECT QUANTITY, ITEMID
+		FROM ORDERDETAIL
+		WHERE ORDERID = #{orderId}
+	</select>
 	
 </mapper>

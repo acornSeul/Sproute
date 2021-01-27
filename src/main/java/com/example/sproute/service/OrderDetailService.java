@@ -32,5 +32,10 @@ public class OrderDetailService {
 	public void deleteOrderDetail (String detailId) {
 		detailSession.deleteOrderDetail(detailId);
 	}
+	
+	//구매 취소할 주문내역 정보 조회
+	public List<OrderDetail> selectItemInfoByOrderId (String orderId){
+		return detailSession.selectItemInfoByOrderId(orderId);
+	}
 
 }

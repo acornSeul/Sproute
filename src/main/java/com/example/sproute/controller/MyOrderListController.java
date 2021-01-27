@@ -68,9 +68,19 @@ public class MyOrderListController {
 	public String CancelOrder(@RequestParam(value="orderId") String orderId,
 			ModelMap model, HttpSession session) throws Exception {
 		
-		orderDetailService.deleteOrderDetail(orderId);
+		String itemId = "";
+		int quantity = 0;
+
+		List<OrderDetail> list = orderDetailService.selectItemInfoByOrderId(orderId);
+		
+		for(int i = 0; i < list.size(); i++) {
+			itemId = list.get(i).getItemId();
+			quantity = list.get(i).getQuantity();
+			
+			itemService.updateStockAfterDelete(quantity, itemId);
+			orderDetailService.deleteOrderDetail(orderId);
+		}
 		orderService.deleteOrder(orderId);
-	
 //		String itemId = orderService.selectItemIdByOrderId(orderId).get(0).getItemId();
 //		int quantity = orderService.selectItemIdByOrderId(orderId).get(0).getQuantity();
 //		
