@@ -12,8 +12,14 @@ public class Order {
 	String userId;
 	String orderDate;
 	String shipAddress;
+	String shipZipCode;
+	String shipAddrDetail;
+	String shipTotalAddress;
 	@NotBlank
 	String address;
+	String zipCode;
+	String addrDetail;
+	String totalAddress;
 	int totalPrice;
 	String cardType;
 	@NotBlank
@@ -25,6 +31,47 @@ public class Order {
 	@NotBlank
 	String userName; // 회원이름
 	int quantity;
+	
+	
+	public String getTotalAddress() {
+		return totalAddress;
+	}
+
+	public String getShipTotalAddress() {
+		return (shipAddress + " " + shipAddrDetail + " (" + shipZipCode + ")");
+	}
+
+	public String getShipZipCode() {
+		return shipZipCode;
+	}
+
+	public void setShipZipCode(String shipZipCode) {
+		this.shipZipCode = shipZipCode;
+	}
+
+	public String getShipAddrDetail() {
+		return shipAddrDetail;
+	}
+
+	public void setShipAddrDetail(String shipAddrDetail) {
+		this.shipAddrDetail = shipAddrDetail;
+	}
+	
+	public String getZipCode() {
+		return zipCode;
+	}
+
+	public void setZipCode(String zipCode) {
+		this.zipCode = zipCode;
+	}
+
+	public String getAddrDetail() {
+		return addrDetail;
+	}
+
+	public void setAddrDetail(String addrDetail) {
+		this.addrDetail = addrDetail;
+	}
 
 	public int getQuantity() {
 		return quantity;
@@ -120,7 +167,14 @@ public class Order {
 		userId = account.getUserId();
 
 		shipAddress = "";
-		address = account.getTotalAddress();
+		shipZipCode = "";
+		shipAddrDetail = "";
+		
+		address = account.getAddress();
+		zipCode = account.getZipCode();
+		addrDetail = account.getDetailAddress();
+		totalAddress = account.getTotalAddress();
+		
 
 		cardNumber = "999 9999 9999 9999";
 		expireDate = "21/01";

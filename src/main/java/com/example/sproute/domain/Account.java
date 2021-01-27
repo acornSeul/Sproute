@@ -17,7 +17,7 @@ public class Account {
 	private String totalAddress;
 	
 	public String getTotalAddress() {
-		return (address + detailAddress);
+		return (address + " " + detailAddress + " (" + zipCode + ")");
 	}
 
 	public Account() {

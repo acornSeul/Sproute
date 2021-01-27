@@ -133,6 +133,8 @@ public class OrderController {
       //orderList insert
        orderForm.getOrder().setTotalPrice(totalPrice);
        orderForm.getOrder().setQuantity(totalQuantity);
+       orderForm.getOrder().setAddress(orderForm.getOrder().getTotalAddress());
+       orderForm.getOrder().setShipAddress(orderForm.getOrder().getShipTotalAddress());
        
        orderService.insertOrder(orderForm.getOrder());
        

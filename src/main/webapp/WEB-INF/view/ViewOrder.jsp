@@ -52,10 +52,10 @@
      <tr>
       <td>Address:</td>
       <c:if test="${shipAddress == true}" >
-      	<td>${orderForm.order.shipAddress}</td>
+      	<td>${orderForm.order.shipTotalAddress}</td>
       </c:if>
       <c:if test="${shipAddress == false}" >
-      	<td>${orderForm.order.address}</td>
+      	<td>${orderForm.order.totalAddress}</td>
       </c:if>
     </tr>
     <tr>
