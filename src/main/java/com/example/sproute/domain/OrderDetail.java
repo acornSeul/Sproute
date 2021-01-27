@@ -45,5 +45,11 @@ public class OrderDetail {
 		this.quantity = quantity;
 	}
 	
+	@Override
+	public String toString() {
+		return "OrderDetail [detailId=" + detailId + ", orderId=" + orderId + ", itemId=" + itemId + ", price=" + price
+				+ ", quantity=" + quantity + "]";
+	}
+	
 	
 }

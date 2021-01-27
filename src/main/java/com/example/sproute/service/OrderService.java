@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.repository.mapper.OrderMapperRepository;
 import com.example.sproute.domain.Order;
+import com.example.sproute.domain.OrderDetail;
 
 @Service
 public class OrderService {
@@ -27,8 +28,10 @@ public class OrderService {
 	public void deleteOrder(String orderId) {
 		orderMapperRepository.deleteOrder(orderId);
 	}
-	public List<Order> selectItemIdByOrderId (String orderId) {
-		return orderMapperRepository.selectItemIdByOrderId(orderId);
+	
+	//주문번호로 주문정보조회
+	public Order selectOrderByOrderId(String orderId) {
+		return orderMapperRepository.selectOrderByOrderId(orderId);
 	}
 
 }

@@ -11,9 +11,16 @@
 		INSERT INTO ORDERDETAIL(DETAILID, ORDERID, ITEMID, PRICE, QUANTITY)
 			VALUES(#{detailId}, #{orderId}, #{itemId}, #{price}, #{quantity})
 	</insert>
-
-	<!-- 주문번호로 구매 상품 조회 -->
-	<select id="selectOrderDetailByOrderId" resultType="Order">
+	
+<!-- 주문번호로 구매 상품 조회 -->
+	<select id="selectOrderDetailByOrderId" parameterType="String" resultType="OrderDetail">
+		SELECT 
+			D.ORDERID, 
+			D.ITEMID,
+			D.PRICE,
+			D.QUANTITY
+		FROM ORDERLIST L, ORDERDETAIL D
+		WHERE D.ORDERID = L.ORDERID AND D.ORDERID = #{orderId}
 	</select>
 
 	<!-- 유저아이디로 주문번호 조회 -->

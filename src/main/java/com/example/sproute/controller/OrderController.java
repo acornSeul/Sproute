@@ -41,7 +41,7 @@ public class OrderController {
    @Autowired
    private OrderDetailService detailService;
    
-   //registrationForm 객체를 생성하여 session에 저장
+   //OrderForm 객체를 생성하여 session에 저장
    @ModelAttribute("orderForm")     
    public OrderForm formBacking(HttpServletRequest request, HttpSession session) {
       if (request.getMethod().equalsIgnoreCase("GET")) {

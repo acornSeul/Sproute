@@ -131,8 +131,10 @@ public class Order {
 	public String toString() {
 		return "Order [orderId=" + orderId + ", userId=" + userId + ", orderDate=" + orderDate + ", shipAddress="
 				+ shipAddress + ", address=" + address + ", totalPrice=" + totalPrice + ", cardType=" + cardType
-				+ ", cardNumber=" + cardNumber + ", expireDate=" + expireDate + ", userName=" + userName + "itemId="
-				+ "]";
+				+ ", cardNumber=" + cardNumber + ", expireDate=" + expireDate + ", userName=" + userName + ", quantity="
+				+ quantity + "]";
 	}
+
+	
 
 }
