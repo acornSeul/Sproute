@@ -4,8 +4,17 @@ public class OrderDetail {
 	String detailId;
 	String orderId;
 	String itemId;
+	String title;
 	int price;
 	int quantity;
+	
+	public OrderDetail(String orderId, String itemId, String title, int price, int quantity) {
+		this.orderId = orderId;
+		this.itemId = itemId;
+		this.title = title;
+		this.price = price;
+		this.quantity = quantity;
+	}
 	
 	public OrderDetail(String orderId, String itemId, int price, int quantity) {
 		this.orderId = orderId;
@@ -32,6 +41,15 @@ public class OrderDetail {
 	public void setItemId(String itemId) {
 		this.itemId = itemId;
 	}
+	
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
 	public int getPrice() {
 		return price;
 	}
@@ -44,12 +62,14 @@ public class OrderDetail {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "OrderDetail [detailId=" + detailId + ", orderId=" + orderId + ", itemId=" + itemId + ", price=" + price
-				+ ", quantity=" + quantity + "]";
+		return "OrderDetail [detailId=" + detailId + ", orderId=" + orderId + ", itemId=" + itemId + ", itemTitle="
+				+ title + ", price=" + price + ", quantity=" + quantity + "]";
 	}
+	
+	
 	
 	
 }

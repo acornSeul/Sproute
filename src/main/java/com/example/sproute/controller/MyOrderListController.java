@@ -67,14 +67,15 @@ public class MyOrderListController {
 	@RequestMapping("/mypage/MyOrderList/cancel") 
 	public String CancelOrder(@RequestParam(value="orderId") String orderId,
 			ModelMap model, HttpSession session) throws Exception {
-		//삭제 전 itemId, quantity 가져오기
-		//String itemId = orderService.selectItemIdByOrderId(orderId).get(0).getItemId();
-		//int quantity = orderService.selectItemIdByOrderId(orderId).get(0).getQuantity();
 		
-		//itemService.updateStockAfterDelete(quantity, itemId);
+		orderDetailService.deleteOrderDetail(orderId);
 		orderService.deleteOrder(orderId);
-		
-		
+	
+//		String itemId = orderService.selectItemIdByOrderId(orderId).get(0).getItemId();
+//		int quantity = orderService.selectItemIdByOrderId(orderId).get(0).getQuantity();
+//		
+//		itemService.updateStockAfterDelete(quantity, itemId);
+//		
 		return "redirect:/mypage/MyOrderList";
 	}
 	

@@ -17,14 +17,17 @@
 		SELECT 
 			D.ORDERID, 
 			D.ITEMID,
+			TITLE,
 			D.PRICE,
 			D.QUANTITY
-		FROM ORDERLIST L, ORDERDETAIL D
-		WHERE D.ORDERID = L.ORDERID AND D.ORDERID = #{orderId}
+		FROM ORDERLIST L, ORDERDETAIL D, ITEM I
+		WHERE D.ORDERID = L.ORDERID AND D.ITEMID = I.ITEMID AND D.ORDERID = #{orderId}
 	</select>
 
 <!-- 주문 취소 -->
 	<delete id = "deleteOrderDetail" parameterType="String">
+		DELETE FROM ORDERDETAIL
+		WHERE ORDERID = #{orderId}
 	</delete>
 	
 </mapper>
