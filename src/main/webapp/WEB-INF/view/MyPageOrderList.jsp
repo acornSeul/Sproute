@@ -60,7 +60,7 @@
               	  <c:out value="${orders.totalPrice}"/>		
                </td>
                <td>
-               	  <a href='<c:url value="/mypage/MyOrderList/orderDetail">
+               	  <a href='<c:url value="/mypage/OrderDetail">
 	 				<c:param name="orderId" value="${orders.orderId}"/></c:url>'><strong>주문상세보기</strong></a>
 	 		   </td>
                <td>
