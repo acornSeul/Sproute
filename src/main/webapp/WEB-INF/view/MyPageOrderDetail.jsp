@@ -99,14 +99,14 @@ table.t1, h3 {
 					</tbody>
 				</table>
 			</div>
+		</div>
       <!-- /.col-lg-9 -->
     </div>
     <!-- /.row -->
-  </div>
+  </div><br/><br/>
+  
   <!-- /.container -->
   <!-- Footer -->
-  
- <br/><br/>
   <footer class="py-5 bg-dark">
     <div class="container">
       <p class="m-0 text-center text-white">Copyright &copy; Sproute 2021</p>
