@@ -56,7 +56,7 @@ table.t1, h3 {
 			</tr>
 			<tr>
 				<th>배송지</th>
-				<td colspan="3">${orderInfo.shipAddress}ㅇㄴㅁㅇㄴㅁㅇㄴㅁㅇㅇㄴㅁ</td>
+				<td colspan="3">${orderInfo.shipAddress}</td>
 			</tr>
 		</table>
 	</div>
