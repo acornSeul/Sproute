@@ -5,7 +5,6 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
@@ -13,13 +12,12 @@
    <!-- Bootstrap core JavaScript -->
   <script src="resource/vendor/jquery/jquery.min.js"></script>
   <script src="resource/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <title>Sproute - Hompage</title>
+  <title>Sproute</title>
   <!-- Bootstrap core CSS -->
   <link href="resource/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
   <link href="resource/css/shop-homepage.css" rel="stylesheet">
-
   <title>나의 입찰내역</title>
 <style>
 table.t1, h3 {
@@ -83,7 +81,6 @@ table.t1, h3 {
     <!-- /.row -->
   </div>
   <!-- /.container -->
-
   <!-- Footer -->
   <footer class="py-5 bg-dark">
     <div class="container">
@@ -93,4 +90,3 @@ table.t1, h3 {
   </footer>
 </body>
 </html>
-
