@@ -63,7 +63,6 @@
                	  <a href='<c:url value="/mypage/MyOrderList/orderDetail">
 	 				<c:param name="orderId" value="${orders.orderId}"/></c:url>'><strong>주문상세보기</strong></a>
 	 		   </td>
-               
                <td>
                	  <a href='<c:url value="/mypage/MyOrderList/cancel">
 	 				<c:param name="orderId" value="${orders.orderId}"/></c:url>'><strong>주문 취소</strong></a>
