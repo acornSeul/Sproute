@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -54,8 +55,8 @@ public class MyOrderListController {
 		return "MyPageOrderList";
 	}
 	
-	@RequestMapping("/mypage/MyOrderList/orderDetail")
-	public String DetailOrder(@RequestParam(value="orderId") String orderId, ModelMap model, HttpSession session) throws Exception {
+	@RequestMapping("/mypage/OrderDetail")
+	public String MyOrderDetail(@RequestParam(value="orderId") String orderId, Model model) {
 		Order orderInfo = orderService.selectOrderByOrderId(orderId); //주문 정보
 		List<OrderDetail> orderitemList = orderDetailService.selectOrderDetailByOrderId(orderId); //아이템 정보
 		

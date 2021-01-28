@@ -3,32 +3,42 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <head>
-	<meta charset="utf-8">
-	<title>주문 상세</title>
+  <meta charset="utf-8">
+  <title>나의 입찰내역</title>
+<style>
+table.t1, h3 {
+    border-collapse: collapse;
+    text-align:center;
+    margin: auto;
+    align:center;
+}
+</style>
 </head>
 <body>
-
+<%@ include file="IncludeTop.jsp" %>
+  <!-- Page Content -->
+  <div class="container">
+    <div class="row">
+      <%@ include file="IncludeMypageBar.jsp" %>
+      <div class="col-lg-9">
+       <h3 class="my-4">주문확인서</h3>
+       
+      <br/>
+주문일자 : ${orderInfo.orderDate}
 <br/>
-${orderInfo.orderDate}
+배송지 : ${orderInfo.shipAddress}
 <br/>
-${orderInfo.shipAddress}
+주소 : ${orderInfo.address}
 <br/>
-${orderInfo.address}
+결제금액 : ${orderInfo.totalPrice}
 <br/>
-${orderInfo.totalPrice}
+카드타입 : ${orderInfo.cardType}
 <br/>
-${orderInfo.cardType}
+카드번호: ${orderInfo.cardNumber}
 <br/>
-${orderInfo.cardNumber}
+카드만료 :${orderInfo.expireDate}
 <br/>
-${orderInfo.expireDate}
-<br/>
-${orderInfo.userName}
-<br/>
-
-
-
-<table class="table">
+				<table class="table">
 					<thead class="thead-light">
 						<tr>
 							<td colspan='5'><strong>구매상품</strong></td>
@@ -55,5 +65,20 @@ ${orderInfo.userName}
 					</c:forEach>
 					</tbody>
 				</table>
+			</div>
+      <!-- /.col-lg-9 -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container -->
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Sproute 2021</p>
+    </div>
+    <!-- /.container -->
+  </footer>
 </body>
 </html>
+
+
