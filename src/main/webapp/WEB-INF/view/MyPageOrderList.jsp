@@ -9,14 +9,15 @@
   <meta name="author" content="">
   <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
    <!-- Bootstrap core JavaScript -->
-  <script src="../resource/vendor/jquery/jquery.min.js"></script>
-  <script src="../resource/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <title>Sproute - MyOrder</title>
+  <script src="resource/vendor/jquery/jquery.min.js"></script>
+  <script src="resource/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <title>Sproute - Hompage</title>
   <!-- Bootstrap core CSS -->
-  <link href="../resource/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="resource/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="../resource/css/shop-homepage.css" rel="stylesheet">
+  <link href="resource/css/shop-homepage.css" rel="stylesheet">
+
 <style>
    a { color:black; text-decoration:none; }
    table, h4 {
@@ -60,11 +61,13 @@
                </td>
                <td>
                	  <a href='<c:url value="/mypage/MyOrderList/orderDetail">
-	 				<c:param name="orderId" value="${orders.orderId}"/></c:url>'><strong>주문상세보기</strong></a></td>
-               </td>
+	 				<c:param name="orderId" value="${orders.orderId}"/></c:url>'><strong>주문상세보기</strong></a>
+	 		   </td>
+               
                <td>
                	  <a href='<c:url value="/mypage/MyOrderList/cancel">
-	 				<c:param name="orderId" value="${orders.orderId}"/></c:url>'><strong>주문 취소</strong></a></td>
+	 				<c:param name="orderId" value="${orders.orderId}"/></c:url>'><strong>주문 취소</strong></a>
+	 		   </td>
             </tr>
 	 			
           </c:forEach>

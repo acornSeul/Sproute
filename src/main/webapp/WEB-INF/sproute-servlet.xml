@@ -43,7 +43,7 @@
 			class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		</bean>
 		
-		 <!-- 로그인 인터셉터 : 상품등록 시  -->
+		 <!-- 로그인 인터셉터   -->
        <mvc:interceptors>
          <mvc:interceptor>
             <mvc:mapping path="/shop/addUsedSumitted" />

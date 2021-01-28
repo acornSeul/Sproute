@@ -61,7 +61,7 @@ public class MyOrderListController {
 		
 		model.addAttribute("orderInfo", orderInfo);
 		model.addAttribute("itemList", orderitemList);
-		return "MyPageOrderDetail";
+		return "My_Order_test";
 	}
 	
 	@RequestMapping("/mypage/MyOrderList/cancel") 
