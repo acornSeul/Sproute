@@ -35,23 +35,46 @@ table.t1, h3 {
     <div class="row">
       <%@ include file="IncludeMypageBar.jsp" %>
       <div class="col-lg-9">
-       <h3 class="my-4">주문확인서</h3>
-       
-      <br/>
-주문일자 : ${orderInfo.orderDate}
 <br/>
-배송지 : ${orderInfo.shipAddress}
+<div class="x">
+	<h3>주문확인서</h3>
 <br/>
-주소 : ${orderInfo.address}
-<br/>
-결제금액 : ${orderInfo.totalPrice}
-<br/>
-카드타입 : ${orderInfo.cardType}
-<br/>
-카드번호: ${orderInfo.cardNumber}
-<br/>
-카드만료 :${orderInfo.expireDate}
-<br/>
+	<div class="table">
+		<table>
+			<tr>
+				<th rowspan="3">주문자정보</th>
+				<th>주문번호</th>
+				<td>${orderInfo.orderId}</td>
+				<th>주문일시</th>
+				<td>${orderInfo.orderDate}</td>
+			</tr>
+			<tr>
+				<th>주문자명</th>
+				<td>${orderInfo.userName}</td>
+				<th>결제금액</th>
+				<td>${orderInfo.totalPrice}</td>
+			</tr>
+			<tr>
+				<th>배송지</th>
+				<td colspan="3">${orderInfo.shipAddress}ㅇㄴㅁㅇㄴㅁㅇㄴㅁㅇㅇㄴㅁ</td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="table" cond="0">
+		<table>
+			<tr>
+				<th rowspan="2">결제 정보</th>
+				<th>카드번호</th>
+				<td colspan="2">${orderInfo.cardNumber}</td>
+			</tr>
+			<tr>
+				<th>카드타입</th>
+				<td colspan="2">${orderInfo.cardType}</td>
+			</tr>
+		</table>
+	</div>
+
 				<table class="table">
 					<thead class="thead-light">
 						<tr>
@@ -82,6 +105,8 @@ table.t1, h3 {
   </div>
   <!-- /.container -->
   <!-- Footer -->
+  
+ <br/><br/>
   <footer class="py-5 bg-dark">
     <div class="container">
       <p class="m-0 text-center text-white">Copyright &copy; Sproute 2021</p>
