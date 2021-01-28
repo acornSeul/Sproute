@@ -28,7 +28,11 @@
 	   alert(message);
 	}
 </script>
-
+<style>
+img {
+  object-fit: cover;
+}
+</style>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
 		<%@ include file="IncludeTop.jsp" %>
@@ -56,7 +60,7 @@
 
       <div class="col-lg-9">
         <div class="card mt-2">
-          <img class="card-img-top img-fluid" src="http://placehold.it/900x400" alt="">
+          <img class="card-img-top img-fluid" src="<c:url value='/upload/${item.imgName}' />" alt="${item.title}">
           <div class="card-body">
             <h3 class="card-title">${item.title}</h3>
             <h4>시작가 : ${item.price} 원</h4>

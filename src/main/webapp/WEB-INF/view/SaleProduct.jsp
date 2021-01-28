@@ -8,7 +8,6 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Sproute - SaleProduct</title>
-
 </head>
 <body>
 	<%@ include file="IncludeTop.jsp" %>
@@ -38,7 +37,7 @@
 			  <c:forEach var="si" items="${Items}">
 		         <div class="col-lg-4 col-md-5 mb-4">
 		            <div class="card h-100">
-		              <a href="<c:url value='/shop/viewItemDetail.do'><c:param name='itemId' value='${si.itemId}'/></c:url>"><img class="card-img-top" src="http://placehold.it/700x400" alt="<c:url value='/upload/${si.imgName}' />"></a>
+		              <a href="<c:url value='/shop/viewItemDetail.do'><c:param name='itemId' value='${si.itemId}'/></c:url>"><img class="card-img-top" id="m" src="<c:url value='/upload/${si.imgName}' />" /></a>
 		              <div class="card-body">
 		                <h4 class="card-title">
 		                  <a href="<c:url value='/shop/viewItemDetail.do'><c:param name='itemId' value='${si.itemId}'/></c:url>">${si.title}</a>

@@ -59,7 +59,7 @@
       <div class="col-lg-9">
 
         <div class="card mt-2">
-          <img class="card-img-top img-fluid" src="http://placehold.it/900x400" alt="">
+        <img id="m" src="<c:url value='/upload/${item.imgName}' />" class="card-img-top img-fluid"/>
           <div class="card-body">
           	<c:if test="${item.stock == 0}">
 				<h6>
