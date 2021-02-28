@@ -1,4 +1,6 @@
-
+/target/
+*.properties
+# Created by https://www.gitignore.io/api/java
 # Created by https://www.toptal.com/developers/gitignore/api/java,windows,eclipse,git
 # Edit at https://www.toptal.com/developers/gitignore?templates=java,windows,eclipse,git
 
