@@ -41,33 +41,32 @@ public class AddBidFormController {
       } else return new BiddingCommand();
    }
    
-   @RequestMapping(value ="/shop/addBidForm", method = RequestMethod.GET)      // 슂泥  URL
+   @RequestMapping(value ="/shop/addBidForm", method = RequestMethod.GET)   
    public String bidForm(@RequestParam("itemId") String itemId, Model model, 
          @ModelAttribute("bidding") BiddingCommand bidding) {
       Auction auction = auctionRepository.selectAuction(itemId);
-      // 엯李  媛쒖닔
       int bidCount = auctionRepository.bidCount(itemId);
-      
       int maxPrice = 0;
+      
       if (bidCount != 0) {
          maxPrice = auctionRepository.maxPriceAuction(itemId);
       }
+      
       Item item = itemService.selectItem(itemId);
       
       auction.setItem(item);
-      
       model.addAttribute("auction", auction);
       model.addAttribute("maxPrice", maxPrice);
+      
       return "addBidForm";
    }
    
-   // 엯李곕벑濡 
-   @RequestMapping(value ="/shop/addBidForm", method = RequestMethod.POST)      // 슂泥  URL
+   @RequestMapping(value ="/shop/addBidForm", method = RequestMethod.POST)
    public String addbidForm(@RequestParam("itemId") String itemId, 
           @Valid @ModelAttribute("bidding") BiddingCommand bidding,
          BindingResult result, Model model, SessionStatus status,
          RedirectAttributes redirect, HttpSession session) {
-      // 엯李곗닔 웾   1濡  怨좎젙
+
       if (bidding.getBidding().getbCount() > 1) {
          result.rejectValue("bidding.bCount", "morethan1", "수량은 1개 이상 할 수 없습니다.");
       }
@@ -77,29 +76,32 @@ public class AddBidFormController {
          Auction auction = auctionRepository.selectAuction(itemId);
          // 엯李  媛쒖닔
          int bidCount = auctionRepository.bidCount(itemId);
-         
          int maxPrice = 0;
+         
          if (bidCount != 0) {
             maxPrice = auctionRepository.maxPriceAuction(itemId);
          }
-         Item item = itemService.selectItem(itemId);
-         auction.setItem(item);
          
+         Item item = itemService.selectItem(itemId);
+         
+         auction.setItem(item);
          model.addAttribute("auction", auction);
          model.addAttribute("maxPrice", maxPrice);
          
          return "addBidForm";
       }
       
-
       Bidding mybidding = bidding.getBidding();
+      
       mybidding.setApplyDate(Calendar.getInstance().getTime());
       mybidding.setBuyerId(session.getAttribute("userId").toString());
       mybidding.setItemId(itemId);
       mybidding.setPrice(bidding.getBidding().getPrice());
       mybidding.setbCount(1);
+      
       auctionRepository.insertBid(mybidding);
       auctionRepository.updateParticipant(itemId);
+  
       redirect.addAttribute("itemId", itemId);
 
       return "redirect: auctionItemDetail";

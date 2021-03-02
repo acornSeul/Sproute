@@ -43,7 +43,7 @@ public class AddAuctionItemController implements ApplicationContextAware {
 	private WebApplicationContext context;	
 	private String uploadDir;
 
-	@Override					// life-cycle callback method
+	@Override				
 	public void setApplicationContext(ApplicationContext appContext)
 		throws BeansException {
 		this.context = (WebApplicationContext) appContext;
@@ -55,6 +55,7 @@ public class AddAuctionItemController implements ApplicationContextAware {
 		if (request.getMethod().equalsIgnoreCase("GET")) {
 			AuctionCommand auction = new AuctionCommand();
 			Item item = new Item();
+			
 			item.setStock(1);
 			auction.setItem(item);
 
@@ -118,22 +119,18 @@ public class AddAuctionItemController implements ApplicationContextAware {
 		      }
 		      
 		      auction.getItem().setProductId(product);
-		      System.out.println(auction.getItem());
-		      int result1 = itemService.insertItem(auction.getItem());
-		      System.out.println(result1);
-		      int result2 = auctionService.insertAuctionItem(inputAuction);
-		      System.out.println(result2);
+		      itemService.insertItem(auction.getItem());
+		      auctionService.insertAuctionItem(inputAuction);
+
 		      List<Item> items = itemService.selectAllAuction("Auction");
-		      
 		      String str_Deadline = bidDeadline;
 		         
-		        DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-		        Date date_Deadline = df.parse(str_Deadline); /// Date타입으로 변경
-		        
-		        System.out.println("date_deadline값은 " + date_Deadline);
-		        auctionService.testScheduler(date_Deadline);
-		      
+	          DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+	          Date date_Deadline = df.parse(str_Deadline); /// Date타입으로 변경
+	          
+	          auctionService.testScheduler(date_Deadline);
 		      model.addAttribute("items", items);
+		      
 		      return "AuctionProduct";
 		   }
 	
